@@ -27,6 +27,7 @@ public abstract class Predio extends Imovel {
         this.valorCondominio = valorCondominio;
     }
 
+    
     /**
      * @return the NomeEdifico
      */
