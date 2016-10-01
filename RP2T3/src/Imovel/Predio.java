@@ -11,39 +11,23 @@ package Imovel;
  */
 public abstract class Predio extends Imovel {
 
-    protected int NumeroDeLocais;
+    
     protected String NomeEdifico;
     protected int andar;
-    protected int numeroDaSala;
+    
     protected double valorCondominio;
 
     public Predio(int codigo, String logradouro, int numero, String bairro,
             String cidade, String descricao, int areaTotal, double valor,
-            int NumeroDeLocais, String NomeEdifico, int andar, int numeroDaSala,
-            double valorCondominio) {
+            String NomeEdifico, int andar,double valorCondominio) {
         
         
         super(codigo, logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
         
-        this.NumeroDeLocais = NumeroDeLocais;
+        
         this.NomeEdifico = NomeEdifico;
         this.andar = andar;
-        this.numeroDaSala = numeroDaSala;
         this.valorCondominio = valorCondominio;
-    }
-
-    /**
-     * @return the NumeroDeLocais
-     */
-    public int getNumeroDeLocais() {
-        return NumeroDeLocais;
-    }
-
-    /**
-     * @param NumeroDeLocais the NumeroDeLocais to set
-     */
-    public void setNumeroDeLocais(int NumeroDeLocais) {
-        this.NumeroDeLocais = NumeroDeLocais;
     }
 
     /**
@@ -73,21 +57,7 @@ public abstract class Predio extends Imovel {
     public void setAndar(int andar) {
         this.andar = andar;
     }
-
-    /**
-     * @return the numeroDaSala
-     */
-    public int getNumeroDaSala() {
-        return numeroDaSala;
-    }
-
-    /**
-     * @param numeroDaSala the numeroDaSala to set
-     */
-    public void setNumeroDaSala(int numeroDaSala) {
-        this.numeroDaSala = numeroDaSala;
-    }
-
+   
     /**
      * @return the valorCondominio
      */
@@ -106,10 +76,8 @@ public abstract class Predio extends Imovel {
     @Override
     public String toString(){
     String dados=" ";
-    dados += "Numero De Locais: " + NumeroDeLocais+"\n";
     dados += "Nome Do Edíficio:" +NomeEdifico +"\n";
     dados += "Andar: " +andar+ "\n";
-    dados += "Numero: " + numeroDaSala + "\n";
     dados += "Valor Do Condominio: " + valorCondominio + "\n";
     
     return dados;
