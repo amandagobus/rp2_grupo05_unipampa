@@ -11,7 +11,7 @@ package Imovel;
  */
 public abstract class Imovel {
 
-    protected int codigo;
+    protected static int codigo;
     protected String logradouro;
     protected int numero;
     protected String bairro;
