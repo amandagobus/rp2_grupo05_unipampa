@@ -10,7 +10,8 @@ package rp2t3;
  * @author Arcano
  */
 public abstract class Imovel {
-    protected int codigo;
+    protected static int codigo;
+    protected String logradouro;
     protected int numero;
     protected String bairro;
     protected String cidade;
@@ -18,8 +19,9 @@ public abstract class Imovel {
     protected int areaTotal;
     protected double valor;
 
-    public Imovel(int codigo, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor) {
+    public Imovel(int codigo, String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor) {
         this.codigo = codigo;
+        this.logradouro = logradouro;
         this.numero = numero;
         this.bairro = bairro;
         this.cidade = cidade;
@@ -42,6 +44,21 @@ public abstract class Imovel {
         this.codigo = codigo;
     }
 
+    
+    /**
+     * @return the logradouro
+     */
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    /**
+     * @param logradouro the logradouro to set
+     */
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+    
     /**
      * @return the numero
      */
@@ -125,12 +142,25 @@ public abstract class Imovel {
     public void setValor(double valor) {
         this.valor = valor;
     }
-
+    /**
+     * Este metodo diz a um Objeto do tipo, Imovel como se escrever como uma String
+     * @return dados, String.
+     */
     @Override
     public String toString() {
-        return "Imovel{" + "codigo=" + codigo + ", numero=" + numero 
-                + ", bairro=" + bairro + ", cidade=" + cidade + ", descricao=" 
-                + descricao + ", areaTotal=" + areaTotal + ", valor=" + valor + '}';
+        String dados =" \n";
+        dados += "Codigo: " + codigo + "\n";
+        dados += "Logradouro: " +logradouro+ "\n";
+        dados += "Numero: " + numero + "\n";
+        dados += "Bairro: " + bairro +"\n";
+        dados += "Cidade: " + cidade +"\n";
+        dados += "Descrição: " + descricao +"\n";
+        dados += "Area Total: " + areaTotal +"\n";
+        dados += "Valor: " + valor +"\n";
+        
+        
+        return dados;
+        
     }
 
     
