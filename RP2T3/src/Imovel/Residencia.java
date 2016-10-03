@@ -9,7 +9,7 @@ package Imovel;
  *
  * @author Arcano
  */
-public class Residencia extends Imovel {
+public abstract class Residencia extends Imovel {
 
     protected int areaConstruida;
     protected int numeroQuartos;
