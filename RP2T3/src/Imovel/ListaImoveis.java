@@ -11,7 +11,7 @@ import java.util.List;
  * Interace que especifica a assinatura dos mÃ©todos que devem ser implementados
  * pela lista de imÃ³veis.
  */
-interface ListaImoveis {
+public abstract interface ListaImoveis {
 
     /**
      * Inclui um imÃ³vel na lista de imÃ³veis.
