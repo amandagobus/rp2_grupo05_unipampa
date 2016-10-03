@@ -13,7 +13,6 @@ public abstract class Predio extends Imovel {
 
     protected String NomeEdifico;
     protected int andar;
-
     protected double valorCondominio;
 
     public Predio(int codigo, String logradouro, int numero, String bairro,
@@ -27,7 +26,6 @@ public abstract class Predio extends Imovel {
         this.valorCondominio = valorCondominio;
     }
 
-    
     /**
      * @return the NomeEdifico
      */
