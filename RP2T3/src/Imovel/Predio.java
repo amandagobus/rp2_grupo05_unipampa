@@ -34,7 +34,7 @@ public abstract class Predio extends Imovel {
     }
 
     /**
-     * @param NomeEdificio the NomeEdificio to set
+     * @param NomeEdifico the NomeEdifico to set
      */
     public void setNomeEdifico(String NomeEdifico) {
         this.nomeEdificio = NomeEdifico;

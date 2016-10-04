@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package repositorio.casa;
+package Casa;
 
 import Imovel.Residencia;
 
@@ -29,7 +29,7 @@ public class Casa extends Residencia {
      * @param numeroQuartos
      * @param anoConstucao
      */
-    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, int areaConstruida, int numeroQuartos, int anoConstucao) {
+    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao) {
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstucao);
     }
 
