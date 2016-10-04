@@ -30,14 +30,14 @@ public abstract class Predio extends Imovel {
      * @return the NomeEdifico
      */
     public String getNomeEdifico() {
-        return NomeEdifico;
+        return nomeEdifico;
     }
 
     /**
      * @param NomeEdifico the NomeEdifico to set
      */
     public void setNomeEdifico(String NomeEdifico) {
-        this.NomeEdifico = NomeEdifico;
+        this.nomeEdifico = NomeEdifico;
     }
 
     /**
@@ -71,7 +71,7 @@ public abstract class Predio extends Imovel {
     @Override
     public String toString() {
         String dados = " ";
-        dados += "Nome Do Edíficio:" + NomeEdifico + "\n";
+        dados += "Nome Do Edíficio:" + nomeEdifico + "\n";
         dados += "Andar: " + andar + "\n";
         dados += "Valor Do Condominio: " + valorCondominio + "\n";
 
