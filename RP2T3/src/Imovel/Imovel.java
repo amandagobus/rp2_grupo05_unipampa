@@ -31,7 +31,7 @@ public abstract class Imovel {
      * @param areaTotal
      * @param valor 
      */
-    public Imovel(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor) {
+    public Imovel(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor) {
         this.codigo = codigo;
              codigo++;
         this.logradouro = logradouro;
