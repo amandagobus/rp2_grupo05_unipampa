@@ -111,7 +111,7 @@ public class MenuSalaComercial {
         Imovel Imo = lista.consultar(entrada.nextInt());
         entrada.nextLine();
 
-        if (Imo != null) {
+        if ((Imo != null)&&(Imo instanceof SalaComercial) ) {
             System.out.println(Imo.toString());
 
         } else if (Imo == null) {
