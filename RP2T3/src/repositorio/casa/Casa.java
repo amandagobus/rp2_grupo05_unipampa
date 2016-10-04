@@ -5,24 +5,19 @@
  */
 package repositorio.casa;
 
-import Imovel.Imovel;
+import Imovel.Residencia;
 
 /**
  *
  * @author Amanda Gobus
  */
-public class Casa extends Imovel {
+public class Casa extends Residencia {
 
     private String tipo;
-    private double area;
-    private int vagasgaragem;
-    private int ano;
-    private int numeroquartos;
+    private int numerosDeVagas;
 
     /**
-     * Construtor da classe casa
      *
-     * @param codigo
      * @param logradouro
      * @param numero
      * @param bairro
@@ -30,10 +25,12 @@ public class Casa extends Imovel {
      * @param descricao
      * @param areaTotal
      * @param valor
-     * @param tipo
+     * @param areaConstruida
+     * @param numeroQuartos
+     * @param anoConstucao
      */
-    public Casa( String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, String tipo) {
-        super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
+    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, int areaConstruida, int numeroQuartos, int anoConstucao) {
+        super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstucao);
     }
 
     public String getTipo() {
@@ -44,36 +41,12 @@ public class Casa extends Imovel {
         this.tipo = tipo;
     }
 
-    public double getArea() {
-        return area;
+    public int getNumerosDeVagas() {
+        return numerosDeVagas;
     }
 
-    public void setArea(double area) {
-        this.area = area;
-    }
-
-    public int getVagasgaragem() {
-        return vagasgaragem;
-    }
-
-    public void setVagasgaragem(int vagasgaragem) {
-        this.vagasgaragem = vagasgaragem;
-    }
-
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
-
-    public int getNumeroquartos() {
-        return numeroquartos;
-    }
-
-    public void setNumeroquartos(int numeroquartos) {
-        this.numeroquartos = numeroquartos;
+    public void setNumerosDeVagas(int numerosDeVagas) {
+        this.numerosDeVagas = numerosDeVagas;
     }
 
 }
