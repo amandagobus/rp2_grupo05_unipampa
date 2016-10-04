@@ -10,12 +10,16 @@ public class Apartamento extends Predio {
 
     private int numeroQuartos;
     private int numeroVagas;
-    private int ano;
+    private int anoDeConstrucao;
     private int numeroDoApartamento;
 
     public Apartamento(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor, String NomeEdifico, int andar, double valorCondominio) {
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, NomeEdifico, andar, valorCondominio);
 
+        // this.numeroDoApartamento = numeroDoApartamento;
+        //this.anoDeConstrucao = anoDeConstrucao ;
+        //this.numeroQuartos=numeroQuartos;
+        //this.numeroVagas = numeroVagas;
     }
 
     /**
@@ -54,16 +58,16 @@ public class Apartamento extends Predio {
      *
      * @return Ano
      */
-    public int getAno() {
-        return ano;
+    public int getAnoDeConstrucao() {
+        return anoDeConstrucao;
     }
 
     /**
      *
-     * @param ano
+     * @param anoDeConstrucao
      */
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setAnoDeConstrucao(int anoDeConstrucao) {
+        this.anoDeConstrucao = anoDeConstrucao;
     }
 
     /**
@@ -91,7 +95,7 @@ public class Apartamento extends Predio {
         String dados = "";
         dados += "Número De Quartos: " + numeroQuartos + "\n";
         dados += "Número Do Apartamento: " + numeroDoApartamento + "\n";
-        dados += "Ano Da Construção: " + ano + "\n";
+        dados += "Ano Da Construção: " + anoDeConstrucao + "\n";
         dados += "Numero De Vagas: " + numeroVagas + "\n";
 
         return dados;
