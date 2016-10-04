@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package SalaComercial;
+
 import Imovel.Predio;
+
 /**
  *
  * @author Arcano
  */
 public class SalaComercial extends Predio {
+
     protected int numeroDeBanheiros;
     protected int numeroDaSala;
-    
+
     /**
-     * 
+     *
      * @param logradouro
      * @param numero
      * @param bairro
@@ -22,23 +25,22 @@ public class SalaComercial extends Predio {
      * @param descricao
      * @param areaTotal
      * @param valor
-     * @param NomeEdifico
+     * @param nomeEdifico
      * @param andar
      * @param valorCondominio
      * @param numeroDeBanheiros
-     * @param numeroDaSala 
+     * @param numeroDaSala
      */
+    public SalaComercial(String logradouro, int numero, String bairro,
+            String cidade, String descricao, double areaTotal, double valor,
+            String nomeEdificio, int andar, double valorCondominio, int numeroDeBanheiros, int numeroDaSala) {
 
-    public SalaComercial( String logradouro, int numero, String bairro, 
-           String cidade, String descricao, double areaTotal, double valor,
-           String NomeEdifico, int andar, double valorCondominio, int numeroDeBanheiros, int numeroDaSala) {
-       
-        super( logradouro, numero, bairro, cidade, descricao, 
-                areaTotal, valor, NomeEdifico, andar, valorCondominio);
-        
+        super(logradouro, numero, bairro, cidade, descricao,
+                areaTotal, valor, nomeEdificio, andar, valorCondominio);
+
         this.numeroDeBanheiros = numeroDeBanheiros;
         this.numeroDaSala = numeroDaSala;
-        
+
     }
 
     /**
@@ -68,16 +70,14 @@ public class SalaComercial extends Predio {
     public void setNumeroDaSala(int numeroDaSala) {
         this.numeroDaSala = numeroDaSala;
     }
-    
-    
-    
+
     @Override
-    public String toString(){
-    String dados = "";
-    dados += "Número De Banheiros: " +numeroDeBanheiros+"\n";
-    dados += "Número Da Sala: " + numeroDaSala + "\n";   
-    
-    return dados;
+    public String toString() {
+        String dados = "";
+        dados += "Número De Banheiros: " + numeroDeBanheiros + "\n";
+        dados += "Número Da Sala: " + numeroDaSala + "\n";
+
+        return dados;
     }
-    
+
 }

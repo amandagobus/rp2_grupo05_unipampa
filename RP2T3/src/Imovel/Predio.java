@@ -15,11 +15,11 @@ public abstract class Predio extends Imovel {
     protected int andar;
     protected double valorCondominio;
 
-    public Predio( String logradouro, int numero, String bairro,
+    public Predio(String logradouro, int numero, String bairro,
             String cidade, String descricao, double areaTotal, double valor,
             String nomeEdificio, int andar, double valorCondominio) {
 
-        super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
+        super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
 
         this.nomeEdificio = nomeEdificio;
         this.andar = andar;
@@ -34,10 +34,10 @@ public abstract class Predio extends Imovel {
     }
 
     /**
-     * @param NomeEdifico the NomeEdifico to set
+     * @param NomeEdificio the NomeEdifico to set
      */
-    public void setNomeEdifico(String NomeEdifico) {
-        this.nomeEdificio = NomeEdifico;
+    public void setNomeEdifico(String NomeEdificio) {
+        this.nomeEdificio = NomeEdificio;
     }
 
     /**
