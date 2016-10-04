@@ -13,17 +13,16 @@ public abstract class Residencia extends Imovel {
 
     protected int areaConstruida;
     protected int numeroQuartos;
-    protected int numeroVagas;
     protected int anoConstrucao;
 
-    public Residencia( String logradouro, int numero, String bairro,
+    public Residencia(String logradouro, int numero, String bairro,
             String cidade, String descricao, int areaTotal, double valor,
-            int areaConstruida, int numeroQuartos, int numeroVagas, int anoConstucao) {
+            int areaConstruida, int numeroQuartos, int anoConstucao) {
 
-        super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
+        super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
         this.areaConstruida = areaConstruida;
         this.numeroQuartos = numeroQuartos;
-        this.numeroVagas = numeroVagas;
+
         this.anoConstrucao = anoConstucao;
     }
 
@@ -58,20 +57,6 @@ public abstract class Residencia extends Imovel {
     }
 
     /**
-     * @return the numeroVagas
-     */
-    public int getNumeroVagas() {
-        return numeroVagas;
-    }
-
-    /**
-     * @param numeroVagas the numeroVagas to set
-     */
-    public void setNumeroVagas(int numeroVagas) {
-        this.numeroVagas = numeroVagas;
-    }
-
-    /**
      * @return the anoConstrucao
      */
     public int getAnoConstrucao() {
@@ -84,17 +69,15 @@ public abstract class Residencia extends Imovel {
     public void setAnoConstrucao(int anoConstrucao) {
         this.anoConstrucao = anoConstrucao;
     }
-    
+
     @Override
-    public String toString(){
-    String dados = "";
-    dados += "Area Construida: " + areaConstruida +"\n";
-    dados += "Número De Quartos: " +numeroQuartos +"\n";
-    dados += "Número De Vagas: " +numeroVagas +"\n";
-    dados += "Ano Da Costrução: " + anoConstrucao + "\n";
-    
-    return dados;
+    public String toString() {
+        String dados = "";
+        dados += "Area Construida: " + areaConstruida + "\n";
+        dados += "Número De Quartos: " + numeroQuartos + "\n";
+        dados += "Ano Da Costrução: " + anoConstrucao + "\n";
+
+        return dados;
     }
-    
 
 }
