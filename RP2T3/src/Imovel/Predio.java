@@ -11,17 +11,17 @@ package Imovel;
  */
 public abstract class Predio extends Imovel {
 
-    protected String NomeEdifico;
+    protected String NomeEdificio;
     protected int andar;
     protected double valorCondominio;
 
     public Predio( String logradouro, int numero, String bairro,
             String cidade, String descricao, double areaTotal, double valor,
-            String NomeEdifico, int andar, double valorCondominio) {
+            String NomeEdificio, int andar, double valorCondominio) {
 
         super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
 
-        this.NomeEdifico = NomeEdifico;
+        this.NomeEdificio = NomeEdificio;
         this.andar = andar;
         this.valorCondominio = valorCondominio;
     }
@@ -29,15 +29,15 @@ public abstract class Predio extends Imovel {
     /**
      * @return the NomeEdifico
      */
-    public String getNomeEdifico() {
-        return NomeEdifico;
+    public String getNomeEdificio() {
+        return NomeEdificio;
     }
 
     /**
-     * @param NomeEdifico the NomeEdifico to set
+     * @param NomeEdificio the NomeEdificio to set
      */
-    public void setNomeEdifico(String NomeEdifico) {
-        this.NomeEdifico = NomeEdifico;
+    public void setNomeEdifico(String NomeEdificio) {
+        this.NomeEdificio = NomeEdificio;
     }
 
     /**
@@ -71,7 +71,7 @@ public abstract class Predio extends Imovel {
     @Override
     public String toString() {
         String dados = " ";
-        dados += "Nome Do Edíficio:" + NomeEdifico + "\n";
+        dados += "Nome Do Edifício:" + NomeEdificio + "\n";
         dados += "Andar: " + andar + "\n";
         dados += "Valor Do Condominio: " + valorCondominio + "\n";
 
