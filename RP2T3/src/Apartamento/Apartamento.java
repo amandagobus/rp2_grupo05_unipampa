@@ -18,11 +18,11 @@ public class Apartamento extends Predio {
     protected int ano;
     protected int numeroDoApartamento;
 
-    public Apartamento(int codigo, String logradouro, int numero, String bairro,
+    public Apartamento( String logradouro, int numero, String bairro,
             String cidade, String descricao, int areaTotal, double valor,
             String NomeEdifico, int andar, double valorCondominio, int numeroQuartos, int numeroVagas, int ano, int numeroDoApartamento) {
 
-        super(codigo, logradouro, numero, bairro, cidade, descricao, areaTotal,
+        super( logradouro, numero, bairro, cidade, descricao, areaTotal,
                 valor, NomeEdifico, andar, valorCondominio);
 
         this.numeroQuartos = numeroQuartos;
