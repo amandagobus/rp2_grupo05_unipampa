@@ -16,7 +16,7 @@ public abstract class Predio extends Imovel {
     protected double valorCondominio;
 
     public Predio( String logradouro, int numero, String bairro,
-            String cidade, String descricao, int areaTotal, double valor,
+            String cidade, String descricao, double areaTotal, double valor,
             String NomeEdifico, int andar, double valorCondominio) {
 
         super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
