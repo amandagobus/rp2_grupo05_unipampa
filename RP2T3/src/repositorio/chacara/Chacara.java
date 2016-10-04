@@ -7,7 +7,7 @@ package repositorio.chacara;
 
 /**
  *
- * @author Amanda Gobus
+ * @author Wilson
  */
 public class Chacara {
     

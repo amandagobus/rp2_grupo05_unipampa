@@ -7,7 +7,7 @@ package repositorio.salaComercial;
 
 /**
  *
- * @author Amanda Gobus
+ * @author 
  */
 public class SalaComercial {
     
