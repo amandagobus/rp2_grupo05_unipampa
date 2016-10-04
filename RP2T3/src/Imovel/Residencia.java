@@ -11,13 +11,26 @@ package Imovel;
  */
 public abstract class Residencia extends Imovel {
 
-    protected int areaConstruida;
+    protected double areaConstruida;
     protected int numeroQuartos;
     protected int anoConstrucao;
 
+    /**
+     *
+     * @param logradouro
+     * @param numero
+     * @param bairro
+     * @param cidade
+     * @param descricao
+     * @param areaTotal
+     * @param valor
+     * @param areaConstruida
+     * @param numeroQuartos
+     * @param anoConstucao
+     */
     public Residencia(String logradouro, int numero, String bairro,
             String cidade, String descricao, int areaTotal, double valor,
-            int areaConstruida, int numeroQuartos, int anoConstucao) {
+            double areaConstruida, int numeroQuartos, int anoConstucao) {
 
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
         this.areaConstruida = areaConstruida;
@@ -31,14 +44,14 @@ public abstract class Residencia extends Imovel {
      *
      * @return areaCosntruida, int.
      */
-    public int getAreaCosntruida() {
+    public double getAreaCosntruida() {
         return areaConstruida;
     }
 
     /**
      * @param areaConstruida the areaConstruida to set
      */
-    public void setAreaConstruida(int areaConstruida) {
+    public void setAreaConstruida(double areaConstruida) {
         this.areaConstruida = areaConstruida;
     }
 
