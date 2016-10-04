@@ -28,8 +28,8 @@ public class Apartamento extends Imovel {
      * @param areaTotal
      * @param valor
      */
-    public Apartamento(int codigo, String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor) {
-        super(codigo, logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
+    public Apartamento( String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor) {
+        super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
     }
 
     public int getNumeroquartos() {
