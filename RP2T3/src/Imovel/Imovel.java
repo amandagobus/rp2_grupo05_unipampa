@@ -11,7 +11,8 @@ package Imovel;
  */
 public abstract class Imovel {
 
-    protected static int codigo = 10000;
+    protected static int codigoGeral = 10000;
+    protected int codigo;
     protected String logradouro;
     protected int numero;
     protected String bairro;
@@ -32,8 +33,8 @@ public abstract class Imovel {
      * @param valor 
      */
     public Imovel(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor) {
-        this.codigo = codigo;
-             codigo++;
+        this.codigo = codigoGeral;
+             codigoGeral++;
         this.logradouro = logradouro;
         this.numero = numero;
         this.bairro = bairro;
