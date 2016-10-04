@@ -9,15 +9,14 @@ import Imovel.Residencia;
 
 /**
  *
- * @author Amanda Gobus
+ * @author Wilson
  */
 public class Chacara extends Residencia {
     
     protected double distCidade;
 
-    public Chacara(double distCidade, String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, int areaConstruida, int numeroQuartos, int numeroVagas, int anoConstucao) {
-        super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, numeroVagas, anoConstucao);
-        
+    public Chacara(double distCidade, String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, int areaConstruida, int numeroQuartos, int anoConstucao) {
+        super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstucao);
         this.distCidade = distCidade;
     }
 
