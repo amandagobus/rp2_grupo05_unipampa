@@ -7,7 +7,7 @@ package Terreno;
 
 /**
  *
- * @author julie
+ * @author julielen
  */
 public class Terreno {
     
