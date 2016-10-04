@@ -1,4 +1,4 @@
-package repositorio.apartamento;
+package Apartamento;
 
 import Imovel.Predio;
 
