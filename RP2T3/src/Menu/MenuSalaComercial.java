@@ -15,6 +15,7 @@ import java.util.Scanner;
  * @author Arcano
  */
 public class MenuSalaComercial {
+
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
 
@@ -101,10 +102,22 @@ public class MenuSalaComercial {
                 descricao, areaTotal, valor, nomeEdifico, andar, valorCondominio,
                 numeroDeBanheiros, numeroDaSala);
 
-        
         lista.incluir(salaC);
-        
-        
+
+    }
+
+    public void Consultar() {
+        System.out.println("Digite o Codigo Que Deseja Consultar: ");
+        Imovel Imo = lista.consultar(entrada.nextInt());
+        entrada.nextLine();
+
+        if (Imo != null) {
+            System.out.println(Imo.toString());
+
+        } else if (Imo == null) {
+            System.out.println("Imovél Não Cadastrado;");
+        }
+
     }
 
 }
