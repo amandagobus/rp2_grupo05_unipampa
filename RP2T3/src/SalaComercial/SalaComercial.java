@@ -12,6 +12,22 @@ import Imovel.Predio;
 public class SalaComercial extends Predio {
     protected int numeroDeBanheiros;
     protected int numeroDaSala;
+    
+    /**
+     * 
+     * @param logradouro
+     * @param numero
+     * @param bairro
+     * @param cidade
+     * @param descricao
+     * @param areaTotal
+     * @param valor
+     * @param NomeEdifico
+     * @param andar
+     * @param valorCondominio
+     * @param numeroDeBanheiros
+     * @param numeroDaSala 
+     */
 
     public SalaComercial( String logradouro, int numero, String bairro, 
            String cidade, String descricao, double areaTotal, double valor,
