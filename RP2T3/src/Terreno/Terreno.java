@@ -5,6 +5,8 @@
  */
 package Terreno;
 
+import Imovel.Imovel;
+
 /**
  *
  * @author julielen
