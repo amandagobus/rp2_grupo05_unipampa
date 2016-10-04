@@ -7,12 +7,24 @@ package repositorio.salaComercial;
 
 import Imovel.Predio;
 
-
 public class SalaComercial extends Predio {
-    
+
     private int numeroDeBanheiros;
     private int numeroDeSala;
 
+    /**
+     *
+     * @param logradouro
+     * @param numero
+     * @param bairro
+     * @param cidade
+     * @param descricao
+     * @param areaTotal
+     * @param valor
+     * @param NomeEdifico
+     * @param andar
+     * @param valorCondominio
+     */
     public SalaComercial(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor, String NomeEdifico, int andar, double valorCondominio) {
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, NomeEdifico, andar, valorCondominio);
     }
@@ -32,5 +44,5 @@ public class SalaComercial extends Predio {
     public void setNumeroDeSala(int numeroDeSala) {
         this.numeroDeSala = numeroDeSala;
     }
-    
+
 }
