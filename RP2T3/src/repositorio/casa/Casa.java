@@ -32,8 +32,8 @@ public class Casa extends Imovel {
      * @param valor
      * @param tipo
      */
-    public Casa(int codigo, String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, String tipo) {
-        super(codigo, logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
+    public Casa( String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, String tipo) {
+        super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
     }
 
     public String getTipo() {
