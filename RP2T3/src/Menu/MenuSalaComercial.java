@@ -11,7 +11,7 @@ import SalaComercial.SalaComercial;
 import java.util.Scanner;
 
 /**
- *
+ **
  * @author Arcano
  */
 public class MenuSalaComercial {
