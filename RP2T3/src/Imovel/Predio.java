@@ -11,17 +11,17 @@ package Imovel;
  */
 public abstract class Predio extends Imovel {
 
-    protected String NomeEdifico;
+    protected String nomeEdifico;
     protected int andar;
     protected double valorCondominio;
 
     public Predio( String logradouro, int numero, String bairro,
             String cidade, String descricao, double areaTotal, double valor,
-            String NomeEdifico, int andar, double valorCondominio) {
+            String nomeEdifico, int andar, double valorCondominio) {
 
         super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
 
-        this.NomeEdifico = NomeEdifico;
+        this.nomeEdifico = nomeEdifico;
         this.andar = andar;
         this.valorCondominio = valorCondominio;
     }
