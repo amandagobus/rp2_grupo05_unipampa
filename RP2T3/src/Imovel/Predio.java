@@ -15,11 +15,11 @@ public abstract class Predio extends Imovel {
     protected int andar;
     protected double valorCondominio;
 
-    public Predio(int codigo, String logradouro, int numero, String bairro,
+    public Predio( String logradouro, int numero, String bairro,
             String cidade, String descricao, int areaTotal, double valor,
             String NomeEdifico, int andar, double valorCondominio) {
 
-        super(codigo, logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
+        super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
 
         this.NomeEdifico = NomeEdifico;
         this.andar = andar;
