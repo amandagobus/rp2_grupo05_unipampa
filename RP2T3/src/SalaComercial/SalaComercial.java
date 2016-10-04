@@ -14,7 +14,7 @@ public class SalaComercial extends Predio {
     protected int numeroDaSala;
 
     public SalaComercial( String logradouro, int numero, String bairro, 
-           String cidade, String descricao, int areaTotal, double valor,
+           String cidade, String descricao, double areaTotal, double valor,
            String NomeEdifico, int andar, double valorCondominio, int numeroDeBanheiros, int numeroDaSala) {
        
         super( logradouro, numero, bairro, cidade, descricao, 
