@@ -1,51 +1,36 @@
 package repositorio.apartamento;
 
-import Imovel.Imovel;
+import Imovel.Predio;
 
 /**
  *
  * @author Amanda Gobus
  */
-public class Apartamento extends Imovel {
+public class Apartamento extends Predio {
 
-    private int numeroquartos;
-    private int vagasgaragem;
+    private int numeroQuartos;
+    private int numeroVagas;
     private int ano;
-    private String nomeedificio;
-    private int andar;
-    private int numeroapartamento;
-    private int valorcondominio;
+    private int numeroDoApartamento;
 
-    /**
-     * Construtor da classe apartamento
-     *
-     * @param codigo
-     * @param logradouro
-     * @param numero
-     * @param bairro
-     * @param cidade
-     * @param descricao
-     * @param areaTotal
-     * @param valor
-     */
-    public Apartamento( String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor) {
-        super( logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
+    public Apartamento(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor, String NomeEdifico, int andar, double valorCondominio) {
+        super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, NomeEdifico, andar, valorCondominio);
     }
 
-    public int getNumeroquartos() {
-        return numeroquartos;
+    public int getNumeroQuartos() {
+        return numeroQuartos;
     }
 
-    public void setNumeroquartos(int numeroquartos) {
-        this.numeroquartos = numeroquartos;
+    public void setNumeroQuartos(int numeroQuartos) {
+        this.numeroQuartos = numeroQuartos;
     }
 
-    public int getVagasgaragem() {
-        return vagasgaragem;
+    public int getNumeroVagas() {
+        return numeroVagas;
     }
 
-    public void setVagasgaragem(int vagasgaragem) {
-        this.vagasgaragem = vagasgaragem;
+    public void setNumeroVagas(int numeroVagas) {
+        this.numeroVagas = numeroVagas;
     }
 
     public int getAno() {
@@ -56,45 +41,21 @@ public class Apartamento extends Imovel {
         this.ano = ano;
     }
 
-    public String getNomeedificio() {
-        return nomeedificio;
+    public int getNumeroDoApartamento() {
+        return numeroDoApartamento;
     }
 
-    public void setNomeedificio(String nomeedificio) {
-        this.nomeedificio = nomeedificio;
-    }
-
-    public int getAndar() {
-        return andar;
-    }
-
-    public void setAndar(int andar) {
-        this.andar = andar;
-    }
-
-    public int getNumeroapartamento() {
-        return numeroapartamento;
-    }
-
-    public void setNumeroapartamento(int numeroapartamento) {
-        this.numeroapartamento = numeroapartamento;
-    }
-
-    public int getValorcondominio() {
-        return valorcondominio;
-    }
-
-    public void setValorcondominio(int valorcondominio) {
-        this.valorcondominio = valorcondominio;
+    public void setNumeroDoApartamento(int numeroDoApartamento) {
+        this.numeroDoApartamento = numeroDoApartamento;
     }
 
     @Override
     public String toString() {
         String dados = "";
-        dados += "Número De Quartos: " + numeroquartos + "\n";
-        dados += "Número Do Apartamento: " + numeroapartamento + "\n";
+        dados += "Número De Quartos: " + numeroQuartos + "\n";
+        dados += "Número Do Apartamento: " + numeroDoApartamento + "\n";
         dados += "Ano Da Construção: " + ano + "\n";
-        dados += "Numero De Vagas: " + vagasgaragem + "\n";
+        dados += "Numero De Vagas: " + numeroVagas + "\n";
 
         return dados;
     }
