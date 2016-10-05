@@ -29,7 +29,7 @@ public abstract class Residencia extends Imovel {
      * @param anoConstucao
      */
     public Residencia(String logradouro, int numero, String bairro,
-            String cidade, String descricao, int areaTotal, double valor,
+            String cidade, String descricao, double areaTotal, double valor,
             double areaConstruida, int numeroQuartos, int anoConstucao) {
 
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor);

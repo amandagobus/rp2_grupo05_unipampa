@@ -138,7 +138,7 @@ public abstract class Imovel {
     /**
      * @param areaTotal the areaTotal to set
      */
-    public void setAreaTotal(int areaTotal) {
+    public void setAreaTotal(double areaTotal) {
         this.areaTotal = areaTotal;
     }
 
