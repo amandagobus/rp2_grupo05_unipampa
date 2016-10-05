@@ -13,9 +13,26 @@ public class Apartamento extends Predio {
     private int anoDeConstrucao;
     private int numeroDoApartamento;
 
-    public Apartamento(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor,String NomeEdifico, int andar,
-     double valorCondominio, int numeroDoApartamento, int anoDeConstrucao, int numeroVagas, int numeroQuartos) {
-        super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, NomeEdifico, andar, valorCondominio);
+    /**
+     *
+     * @param logradouro
+     * @param numero
+     * @param bairro
+     * @param cidade
+     * @param descricao
+     * @param areaTotal
+     * @param valor
+     * @param nomeEdificio
+     * @param andar
+     * @param valorCondominio
+     * @param numeroDoApartamento
+     * @param anoDeConstrucao
+     * @param numeroVagas
+     * @param numeroQuartos
+     */
+    public Apartamento(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor, String nomeEdificio, int andar,
+            double valorCondominio, int numeroDoApartamento, int anoDeConstrucao, int numeroVagas, int numeroQuartos) {
+        super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, nomeEdificio, andar, valorCondominio);
 
         this.numeroDoApartamento = numeroDoApartamento;
         this.anoDeConstrucao = anoDeConstrucao;
@@ -93,7 +110,7 @@ public class Apartamento extends Predio {
      */
     @Override
     public String toString() {
-        String dados = "";
+        String dados = super.toString();
         dados += "Número De Quartos: " + numeroQuartos + "\n";
         dados += "Número Do Apartamento: " + numeroDoApartamento + "\n";
         dados += "Ano Da Construção: " + anoDeConstrucao + "\n";

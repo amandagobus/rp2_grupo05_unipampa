@@ -44,7 +44,7 @@ public class Chacara extends Residencia {
 
     @Override
     public String toString() {
-        String dados = "";
+        String dados = super.toString();
         dados += "Distância da cidade: " + distCidade + "\n";
 
         return dados;

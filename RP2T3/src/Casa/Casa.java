@@ -17,7 +17,7 @@ public class Casa extends Residencia {
     private int numerosDeVagas;
 
     /**
-     *
+     * @param tipo
      * @param logradouro
      * @param numero
      * @param bairro
@@ -28,6 +28,7 @@ public class Casa extends Residencia {
      * @param areaConstruida
      * @param numeroQuartos
      * @param anoConstucao
+     * @param numerosDeVagas
      */
     public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao, String tipo, int numerosDeVagas) {
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstucao);
@@ -57,7 +58,7 @@ public class Casa extends Residencia {
      */
     @Override
     public String toString() {
-        String dados = "";
+        String dados = super.toString();
         dados += "Número De Vagas: " + numerosDeVagas + "\n";
         dados += "Tipo: " + tipo + "\n";
 
