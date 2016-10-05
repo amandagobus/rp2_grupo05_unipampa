@@ -29,8 +29,10 @@ public class Casa extends Residencia {
      * @param numeroQuartos
      * @param anoConstucao
      */
-    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao) {
+    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao, String tipo, int numerosDeVagas) {
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstucao);
+        this.tipo = tipo;
+        this.numerosDeVagas = numerosDeVagas;
     }
 
     public String getTipo() {
@@ -49,4 +51,16 @@ public class Casa extends Residencia {
         this.numerosDeVagas = numerosDeVagas;
     }
 
+    /**
+     *
+     * @return dados
+     */
+    @Override
+    public String toString() {
+        String dados = "";
+        dados += "Número De Vagas: " + numerosDeVagas + "\n";
+        dados += "Tipo: " + tipo + "\n";
+
+        return dados;
+    }
 }
