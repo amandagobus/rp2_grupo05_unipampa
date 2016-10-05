@@ -9,12 +9,25 @@ import Imovel.Imovel;
 
 /**
  *
- * @author 
+ * @author Julielen
  */
 public class Terreno extends Imovel {
 
     private double dimensaoFrente;
     private double dimensaoLado;
+    
+    /**
+     * 
+     * @param logradouro
+     * @param numero
+     * @param bairro
+     * @param cidade
+     * @param descricao
+     * @param areaTotal
+     * @param valor
+     * @param dimensaoFrente
+     * @param dimensaoLado 
+     */
 
     public Terreno(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor, double dimensaoFrente, double dimensaoLado) {
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
