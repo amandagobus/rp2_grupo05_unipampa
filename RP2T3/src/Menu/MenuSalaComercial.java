@@ -96,7 +96,7 @@ public class MenuSalaComercial {
 
         System.out.println("Digite o Número de Banheiros:  ");
         numeroDeBanheiros = entrada.nextInt();
-        entrada.nextInt();
+        entrada.nextLine();
 
         Imovel salaC = new SalaComercial(logradouro, numero, bairro, cidade,
                 descricao, areaTotal, valor, nomeEdifico, andar, valorCondominio,
@@ -120,4 +120,62 @@ public class MenuSalaComercial {
 
     }
 
+    public void menuInical() {
+        int i;
+
+        do {
+            MenuSalaComercial.menu();
+             i = entrada.nextInt();
+            entrada.nextLine();
+
+            switch (i) {
+                case 1:
+                    System.out.println("\n");
+                    System.out.println("*********** Incluir Resumo ************");
+                    System.out.println("\n");
+                    IncluirImovel();
+                    break;
+
+                case 2:
+                   MenuSalaComercial.menu2();
+            int opcao = entrada.nextInt();
+                    entrada.nextLine();
+
+                    switch (opcao) {
+                        case 1:
+                            System.out.println("\n");
+                            System.out.println("******** Consultar Resumo Por Titulo ********");
+                            System.out.println("\n\n");
+                            Consultar();
+                            break;
+
+                        default:
+                            break;
+
+                    }
+                    break;
+
+                case 3:
+                    
+                    break;
+
+                case 4:
+                   
+
+                    break;
+
+                case 5:
+                    
+
+                default:
+                   break;
+
+            }
+
+        } while (i != 0);
+
+    }
+
+    
+    
 }
