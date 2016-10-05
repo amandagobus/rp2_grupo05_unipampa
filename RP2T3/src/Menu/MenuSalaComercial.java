@@ -120,7 +120,7 @@ public class MenuSalaComercial {
 
     }
 
-    public void menuInical() {
+    public void menuInicial() {
         int i;
 
         do {
