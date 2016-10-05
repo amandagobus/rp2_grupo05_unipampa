@@ -74,14 +74,14 @@ public class MenuSalaComercial {
         System.out.println("Digite Uma Descrição:  ");
         descricao = entrada.nextLine();
 
-        System.out.println("Digite a Aréa Total:  ");
+        System.out.println("Digite a Área Total:  ");
         areaTotal = entrada.nextDouble();
         entrada.nextLine();
 
-        System.out.println("Digite o Valor do Imovél:  ");
+        System.out.println("Digite o Valor do Imóvel:  ");
         valor = entrada.nextDouble();
         entrada.nextLine();
-        System.out.println("Digite o Nome do Edíficio:  ");
+        System.out.println("Digite o Nome do Edifício:  ");
         nomeEdifico = entrada.nextLine();
 
         System.out.println("Digite o Número do Andar:  ");
@@ -107,15 +107,15 @@ public class MenuSalaComercial {
     }
 
     public void Consultar() {
-        System.out.println("Digite o Codigo Que Deseja Consultar: ");
+        System.out.println("Digite o Código Que Deseja Consultar: ");
         Imovel Imo = lista.consultar(entrada.nextInt());
         entrada.nextLine();
 
-        if ((Imo != null)&&(Imo instanceof SalaComercial) ) {
+        if ((Imo != null) && (Imo instanceof SalaComercial)) {
             System.out.println(Imo.toString());
 
         } else if (Imo == null) {
-            System.out.println("Imovél Não Cadastrado;");
+            System.out.println("Imóvel Não Cadastrado;");
         }
 
     }
@@ -125,26 +125,26 @@ public class MenuSalaComercial {
 
         do {
             MenuSalaComercial.menu();
-             i = entrada.nextInt();
+            i = entrada.nextInt();
             entrada.nextLine();
 
             switch (i) {
                 case 1:
                     System.out.println("\n");
-                    System.out.println("*********** Incluir Resumo ************");
+                    System.out.println("*********** Incluir Imóvel ************");
                     System.out.println("\n");
                     IncluirImovel();
                     break;
 
                 case 2:
-                   MenuSalaComercial.menu2();
-            int opcao = entrada.nextInt();
+                    MenuSalaComercial.menu2();
+                    int opcao = entrada.nextInt();
                     entrada.nextLine();
 
                     switch (opcao) {
                         case 1:
                             System.out.println("\n");
-                            System.out.println("******** Consultar Resumo Por Titulo ********");
+                            System.out.println("******** Consultar Imóvel Por Titulo ********");
                             System.out.println("\n\n");
                             Consultar();
                             break;
@@ -156,19 +156,17 @@ public class MenuSalaComercial {
                     break;
 
                 case 3:
-                    
+
                     break;
 
                 case 4:
-                   
 
                     break;
 
                 case 5:
-                    
 
                 default:
-                   break;
+                    break;
 
             }
 
@@ -176,6 +174,4 @@ public class MenuSalaComercial {
 
     }
 
-    
-    
 }
