@@ -9,7 +9,7 @@ import Imovel.Imovel;
 
 /**
  *
- * @author julielen
+ * @author 
  */
 public class Terreno extends Imovel{
     private double dimensaoFrente;
@@ -51,6 +51,6 @@ public class Terreno extends Imovel{
         this.dimensaoLado = dimensaoLado;
     }
     
-      
+     
     
 }
