@@ -11,7 +11,8 @@ import Imovel.Imovel;
  *
  * @author 
  */
-public class Terreno extends Imovel{
+public class Terreno extends Imovel {
+
     private double dimensaoFrente;
     private double dimensaoLado;
 
@@ -19,8 +20,7 @@ public class Terreno extends Imovel{
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor);
         this.dimensaoFrente = dimensaoFrente;
         this.dimensaoLado = dimensaoLado;
-        
-        
+
     }
 
     /**
@@ -50,7 +50,14 @@ public class Terreno extends Imovel{
     public void setDimensaoLado(double dimensaoLado) {
         this.dimensaoLado = dimensaoLado;
     }
-    
-     
-    
+
+    @Override
+    public String toString() {
+        String dados = super.toString();
+        dados += "Dimensão de Frente: " + dimensaoFrente + "\n";
+        dados += "Dimensão de Lado: " + dimensaoLado + "\n";
+
+        return dados;
+    }
+
 }
