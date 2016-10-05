@@ -89,6 +89,9 @@ public class MenuTerreno {
 
         } else if (Imo == null) {
             System.out.println("Imovél Não Cadastrado;");
+            
+            
+            
         }
     }
 }
