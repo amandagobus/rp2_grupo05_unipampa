@@ -8,7 +8,6 @@ package Menu;
 import java.util.Scanner;
 import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
-import SalaComercial.SalaComercial;
 import Terreno.Terreno;
 
 /**
@@ -89,7 +88,6 @@ public class MenuTerreno {
 
         } else if (Imo == null) {
             System.out.println("Imovél Não Cadastrado;");
-            
             
             
         }
