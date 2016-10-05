@@ -81,6 +81,7 @@ public class MenuSalaComercial {
         System.out.println("Digite o Valor do Imovél:  ");
         valor = entrada.nextDouble();
         entrada.nextLine();
+        
         System.out.println("Digite o Nome do Edíficio:  ");
         nomeEdifico = entrada.nextLine();
 
@@ -90,6 +91,7 @@ public class MenuSalaComercial {
         System.out.println("Digite o Valor do Condominio:  ");
         valorCondominio = entrada.nextDouble();
         entrada.nextLine();
+        
         System.out.println("Digite o Número da Sala:  ");
         numeroDaSala = entrada.nextInt();
         entrada.nextLine();
