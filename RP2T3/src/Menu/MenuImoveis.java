@@ -15,14 +15,14 @@ import java.util.Scanner;
  * @author Arcano
  */
 public class MenuImoveis {
-    
+
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner imput = new Scanner(System.in);
-    
-     public static void menu() {
+
+    public static void menu() {
         System.out.println(" \n");
         System.out.println("***** Menu *****\n");
-        System.out.println("1) Novo Imovél ");
+        System.out.println("1) Novo Imóvel ");
         System.out.println("2) Consultar");
         System.out.println("3) Editar ");
         System.out.println("4) Excluir");
@@ -31,8 +31,8 @@ public class MenuImoveis {
         System.out.print("Opção:    ");
 
     }
-     
-     public static void menu2() {
+
+    public static void menu2() {
         System.out.println(" \n");
         System.out.println("*************** Menu de Consulta *****************");
         System.out.println(" \n");
@@ -42,13 +42,13 @@ public class MenuImoveis {
         System.out.print("Opcao:     ");
 
     }
-     
-     String logradouro;
-        int numero;
-        String bairro;
-        String cidade;
-        String descricao;
-        double areaTotal;
-        double valor;
-    
+
+    String logradouro;
+    int numero;
+    String bairro;
+    String cidade;
+    String descricao;
+    double areaTotal;
+    double valor;
+
 }

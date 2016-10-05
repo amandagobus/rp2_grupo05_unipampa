@@ -25,7 +25,7 @@ public class SalaComercial extends Predio {
      * @param descricao
      * @param areaTotal
      * @param valor
-     * @param nomeEdifico
+     * @param nomeEdificio
      * @param andar
      * @param valorCondominio
      * @param numeroDeBanheiros

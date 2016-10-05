@@ -74,7 +74,7 @@ public class MenuChacara {
         System.out.println("Digite Uma Descrição:  ");
         descricao = entrada.nextLine();
 
-        System.out.println("Digite a Aréa Total:  ");
+        System.out.println("Digite a Área Total:  ");
         areaTotal = entrada.nextDouble();
         entrada.nextLine();
 
@@ -106,7 +106,7 @@ public class MenuChacara {
     }
 
     public void Consultar() {
-        System.out.println("Digite o Codigo Que Deseja Consultar: ");
+        System.out.println("Digite o Código Que Deseja Consultar: ");
         Imovel Imo = lista.consultar(entrada.nextInt());
         entrada.nextLine();
 
@@ -114,7 +114,7 @@ public class MenuChacara {
             System.out.println(Imo.toString());
 
         } else if (Imo == null) {
-            System.out.println("Imovél Não Cadastrado.");
+            System.out.println("Imóvel Não Cadastrado.");
         }
 
     }
