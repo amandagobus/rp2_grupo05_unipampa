@@ -6,7 +6,6 @@
 package Menu;
 
 import Apartamento.Apartamento;
-import Casa.Casa;
 import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import java.util.Scanner;
@@ -60,13 +59,6 @@ public class MenuApartamento {
         int numeroDoApartamento;
         int andar;
         double valorCondominio;
-        
-       
-    
-        
-        
-        
-        
 
         System.out.println("Digite o Logradouro:  ");
         logradouro = entrada.nextLine();
@@ -118,23 +110,21 @@ public class MenuApartamento {
         System.out.println("Digite o Valor do Condominio:  ");
         valorCondominio = entrada.nextDouble();
         entrada.nextLine();
-        
-           Imovel apartamento = new Apartamento(logradouro, numero, bairro, 
-                   cidade, descricao, areaTotal, valor, nomeEdificio, andar, 
-                   valorCondominio, numeroDoApartamento, anoDeConstrucao,
-                   numeroVagas, numeroQuartos);
-           
+
+        Imovel apartamento = new Apartamento(logradouro, numero, bairro,
+                cidade, descricao, areaTotal, valor, nomeEdificio, andar,
+                valorCondominio, numeroDoApartamento, anoDeConstrucao,
+                numeroVagas, numeroQuartos);
+
         lista.incluir(apartamento);
     }
 
-
-      
     public void Consultar() {
         System.out.println("Digite o Código Que Deseja Consultar: ");
         Imovel Imo = lista.consultar(entrada.nextInt());
         entrada.nextLine();
 
-        if ((Imo != null)&&(Imo instanceof Apartamento) ) {
+        if ((Imo != null) && (Imo instanceof Apartamento)) {
             System.out.println(Imo.toString());
 
         } else if (Imo == null) {
