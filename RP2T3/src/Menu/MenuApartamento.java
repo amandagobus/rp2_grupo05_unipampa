@@ -119,9 +119,11 @@ public class MenuApartamento {
         valorCondominio = entrada.nextDouble();
         entrada.nextLine();
         
-           Imovel apartamento = new Apartamento(logradouro, numero, bairro, cidade,
-                descricao, areaTotal, valor, numeroQuartos,numeroVagas
-                  anoDeConstrucao, numeroDoApartamento, andar, valorCondominio);
+           Imovel apartamento = new Apartamento(logradouro, numero, bairro, 
+                   cidade, descricao, areaTotal, valor, nomeEdificio, andar, 
+                   valorCondominio, numeroDoApartamento, anoDeConstrucao,
+                   numeroVagas, numeroQuartos);
+           
         lista.incluir(apartamento);
     }
 
