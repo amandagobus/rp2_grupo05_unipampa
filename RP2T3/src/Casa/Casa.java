@@ -14,7 +14,7 @@ import Imovel.Residencia;
 public class Casa extends Residencia {
 
     private String tipo;
-    private int numerosDeVagas;
+    private int numeroDeVagas;
 
     /**
      * @param tipo
@@ -28,12 +28,12 @@ public class Casa extends Residencia {
      * @param areaConstruida
      * @param numeroQuartos
      * @param anoConstucao
-     * @param numerosDeVagas
+     * @param numeroDeVagas
      */
-    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao, String tipo, int numerosDeVagas) {
+    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao, String tipo, int numeroDeVagas) {
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstucao);
         this.tipo = tipo;
-        this.numerosDeVagas = numerosDeVagas;
+        this.numeroDeVagas = numeroDeVagas;
     }
 
     public String getTipo() {
@@ -44,12 +44,12 @@ public class Casa extends Residencia {
         this.tipo = tipo;
     }
 
-    public int getNumerosDeVagas() {
-        return numerosDeVagas;
+    public int getNumeroDeVagas() {
+        return numeroDeVagas;
     }
 
-    public void setNumerosDeVagas(int numerosDeVagas) {
-        this.numerosDeVagas = numerosDeVagas;
+    public void setNumeroDeVagas(int numeroDeVagas) {
+        this.numeroDeVagas = numeroDeVagas;
     }
 
     /**
@@ -59,7 +59,7 @@ public class Casa extends Residencia {
     @Override
     public String toString() {
         String dados = super.toString();
-        dados += "Número De Vagas: " + numerosDeVagas + "\n";
+        dados += "Número De Vagas: " + numeroDeVagas + "\n";
         dados += "Tipo: " + tipo + "\n";
 
         return dados;

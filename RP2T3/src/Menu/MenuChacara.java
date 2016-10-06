@@ -78,7 +78,7 @@ public class MenuChacara {
         areaTotal = entrada.nextDouble();
         entrada.nextLine();
 
-        System.out.println("Digite o Valor do Imovél:  ");
+        System.out.println("Digite o Valor do Imóvel:  ");
         valor = entrada.nextDouble();
         entrada.nextLine();
         

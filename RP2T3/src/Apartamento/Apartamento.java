@@ -40,6 +40,8 @@ public class Apartamento extends Predio {
         this.numeroVagas = numeroVagas;
     }
 
+  
+
     /**
      *
      * @return NumeroQuartos

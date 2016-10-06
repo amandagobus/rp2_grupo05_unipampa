@@ -22,7 +22,7 @@ public class MenuSalaComercial {
     public static void menu() {
         System.out.println(" \n");
         System.out.println("***** Menu *****\n");
-        System.out.println("1) Novo Imovél ");
+        System.out.println("1) Novo Imóvel ");
         System.out.println("2) Consultar");
         System.out.println("3) Editar ");
         System.out.println("4) Excluir");
