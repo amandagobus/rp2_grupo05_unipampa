@@ -9,6 +9,7 @@ import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import java.util.Scanner;
 import Casa.Casa;
+import Imovel.Tipo;
 
 /**
  *
@@ -56,7 +57,7 @@ public class MenuCasa {
         int numeroQuartos;
         int anoConstrucao;
 
-        String tipo;
+        
         int numeroDeVagas;
 
         System.out.println("Digite o Logradouro:  ");
@@ -98,8 +99,17 @@ public class MenuCasa {
         System.out.println("Digite o Ano de Construção:  ");
         anoConstrucao = entrada.nextInt();
         entrada.nextLine();
+        
+        System.out.println("Digite o Tipo do Imóvel: ");
+        System.out.println("  1) RESIDENCIAL       2)COMERCIAL ");
+        Tipo tipo = Tipo.CasaTipo(numero);
+        
+        
 
-        Imovel casa = new Casa(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstrucao, tipo, numeroDeVagas);
+        Imovel casa = new Casa(logradouro, numero, bairro, cidade, descricao, 
+                numero, valor, areaConstruida, numeroQuartos, anoConstrucao, 
+                bairro, numeroDeVagas);
+        
         lista.incluir(casa);
     }
 
