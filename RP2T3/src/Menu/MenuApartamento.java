@@ -19,29 +19,34 @@ public class MenuApartamento {
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
 
-    public static void menu() {
-        System.out.println(" \n");
-        System.out.println("***** Menu *****\n");
-        System.out.println("1) Novo Imóvel ");
-        System.out.println("2) Consultar");
-        System.out.println("3) Editar ");
-        System.out.println("4) Excluir");
-        System.out.println("0) Voltar ");
-        System.out.println(" ");
-        System.out.print("Opção:    ");
+    public void menu() {
+        int opcao = -1;
+        do {
+            System.out.println(" \n");
+            System.out.println("***** APARTAMENTO *****\n");
+            System.out.println("1) Novo Imóvel APARTAMENTO ");
+            System.out.println("2) Consultar");
+            //System.out.println("3) Editar ");
+            //System.out.println("4) Excluir");
+            System.out.println("0) Sair ");
+            System.out.println(" ");
+            System.out.print("Opção: ");
+            opcao = entrada.nextInt();
+            entrada.nextLine();
+            switch (opcao) {
+                case 0:
+                    break;
+                case 1:
+                    IncluirImovel();
+                    break;
+                case 2:
+                    Consultar();
+                    break;
+            }
+        } while (opcao != 0);
 
     }
 
-    public static void menu2() {
-        System.out.println(" \n");
-        System.out.println("*************** Menu de Consulta *****************");
-        System.out.println(" \n");
-        System.out.println("1) Código  ");
-        System.out.println("0) Voltar ");
-        System.out.println("\n ");
-        System.out.print("Opcao:     ");
-
-    }
 
     public void IncluirImovel() {
         String logradouro;
@@ -127,9 +132,15 @@ public class MenuApartamento {
         if ((Imo != null) && (Imo instanceof Apartamento)) {
             System.out.println(Imo.toString());
 
-        } else if (Imo == null) {
+        } else {
             System.out.println("Imóvel Não Cadastrado.");
         }
+
+    }
+
+    public static void main(String[] args) {
+        MenuApartamento a = new MenuApartamento();
+        a.menu();
 
     }
 }

@@ -20,29 +20,35 @@ public class MenuCasa {
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
 
-    public static void menu() {
-        System.out.println(" \n");
-        System.out.println("***** Menu *****\n");
-        System.out.println("1) Novo Imóvel ");
-        System.out.println("2) Consultar");
-        System.out.println("3) Editar ");
-        System.out.println("4) Excluir");
-        System.out.println("0) Voltar ");
-        System.out.println(" ");
-        System.out.print("Opção:    ");
+    public void menu() {
+        int opcao = -1;
+        do {
+            System.out.println(" \n");
+            System.out.println("***** CASA *****\n");
+            System.out.println("1) Novo Imóvel CASA ");
+            System.out.println("2) Consultar");
+            //System.out.println("3) Editar ");
+            //System.out.println("4) Excluir");
+            System.out.println("0) Sair ");
+            System.out.println(" ");
+            System.out.print("Opção: ");
+            opcao = entrada.nextInt();
+            entrada.nextLine();
+            switch (opcao) {
+                case 0:
+                    break;
+                case 1:
+                    IncluirImovel();
+                    break;
+                case 2:
+                    Consultar();
+                    break;
+            }
+        } while (opcao != 0);
 
     }
 
-    public static void menu2() {
-        System.out.println(" \n");
-        System.out.println("*************** Menu de Consulta *****************");
-        System.out.println(" \n");
-        System.out.println("1) Código  ");
-        System.out.println("0) Voltar ");
-        System.out.println("\n ");
-        System.out.print("Opcao:     ");
-
-    }
+  
 
     public void IncluirImovel() {
         String logradouro;
@@ -53,11 +59,11 @@ public class MenuCasa {
         double areaTotal;
         double valor;
 
+        int tipo;
         double areaConstruida;
         int numeroQuartos;
         int anoConstrucao;
 
-        
         int numeroDeVagas;
 
         System.out.println("Digite o Logradouro:  ");
@@ -99,17 +105,15 @@ public class MenuCasa {
         System.out.println("Digite o Ano de Construção:  ");
         anoConstrucao = entrada.nextInt();
         entrada.nextLine();
-        
+
         System.out.println("Digite o Tipo do Imóvel: ");
         System.out.println("  1) RESIDENCIAL       2)COMERCIAL ");
-        Tipo tipo = Tipo.CasaTipo(numero);
-        
-        
+        tipo = entrada.nextInt();
+        Tipo t = Tipo.CasaTipo(tipo);
+        Imovel casa = new Casa(logradouro, numero, bairro, cidade, descricao,
+                numero, valor, areaConstruida, numeroQuartos, anoConstrucao,
+                t, numeroDeVagas);
 
-        Imovel casa = new Casa(logradouro, numero, bairro, cidade, descricao, 
-                numero, valor, areaConstruida, numeroQuartos, anoConstrucao, 
-                bairro, numeroDeVagas);
-        
         lista.incluir(casa);
     }
 
@@ -121,9 +125,16 @@ public class MenuCasa {
         if ((Imo != null) && (Imo instanceof Casa)) {
             System.out.println(Imo.toString());
 
-        } else if (Imo == null) {
+        } else {
             System.out.println("Imóvel Não Cadastrado.");
         }
 
     }
+
+    public static void main(String[] args) {
+        MenuCasa c = new MenuCasa();
+        c.menu();
+
+    }
+
 }
