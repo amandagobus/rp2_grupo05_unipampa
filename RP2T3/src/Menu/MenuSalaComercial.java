@@ -44,7 +44,8 @@ public class MenuSalaComercial {
     }
 
     /**
-     * Metodo que faz a interação com o usuário
+     * Metodo que faz a interação com o usuário, passando após as informações 
+     * para o construtor.
      */
     public void IncluirImovel() {
 
