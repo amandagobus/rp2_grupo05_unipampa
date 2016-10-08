@@ -128,7 +128,13 @@ public class MenuApartamento {
                 valorCondominio, numeroDoApartamento, anoDeConstrucao,
                 numeroVagas, numeroQuartos);
 
-        lista.incluir(apartamento);
+        boolean objeto = lista.incluir(apartamento);
+        System.out.println("\n\n");
+        if (objeto == true) {
+            System.out.println("Imóvel incluido com sucesso.");
+        } else {
+            System.out.println("Imóvel não foi incluido.");
+        }
     }
 
     /**
