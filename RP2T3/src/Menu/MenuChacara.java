@@ -19,6 +19,9 @@ public class MenuChacara {
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
 
+    /**
+     *Este método faz as interações com o usuário, de modo que quando este escolhe a opção é chamado outro método para realizar a ação
+     */
     public void menuInicial() {
         int opcao = -1;
         do {
@@ -47,6 +50,9 @@ public class MenuChacara {
 
     }
 
+    /**
+     *Esse método recebe informações do usuário e passa para o construtor (parâmetros)
+     */
     public void IncluirImovel() {
 
         String logradouro;
@@ -104,18 +110,22 @@ public class MenuChacara {
                 areaConstruida, numeroQuartos, anoConstucao);
 
         boolean objeto = lista.incluir(chacara);
-        System.out.println("\n\n");
+        System.out.println("\n");
+        
         if (objeto == true) {
-            System.out.println("Imóvel incluido com sucesso.");
+            System.out.println("Imóvel incluido com sucesso!");
         } else {
-            System.out.println("Imóvel não foi incluido.");
+            System.out.println("Imóvel não foi incluido!");
         }
 
     }
 
+    /**
+     * Consulta pela entrada do usuário (inteiro - código)
+     */
     public void Consultar() {
         System.out.println("Digite o Código Que Deseja Consultar: ");
-        Imovel Imo = lista.consultar(entrada.nextInt());
+        Imovel Imo = lista.consultar(entrada.nextInt()); //Cria um objeto do tipo Imóvel e consulta pela entrada do usuário
         entrada.nextLine();
 
         if ((Imo != null) && (Imo instanceof Chacara)) {
