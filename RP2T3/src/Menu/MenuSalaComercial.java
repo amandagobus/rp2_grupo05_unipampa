@@ -43,6 +43,9 @@ public class MenuSalaComercial {
 
     }
 
+    /**
+     * Metodo que faz a interação com o usuário
+     */
     public void IncluirImovel() {
 
         String logradouro;
@@ -107,6 +110,10 @@ public class MenuSalaComercial {
 
     }
 
+    /**
+     * Metodo que recebe uma informação do usuario, e consulta se o objeto esta
+     * na listaImoveis.
+     */
     public void Consultar() {
         System.out.println("\n");
         System.out.println("Digite o Código Que Deseja Consultar: ");
