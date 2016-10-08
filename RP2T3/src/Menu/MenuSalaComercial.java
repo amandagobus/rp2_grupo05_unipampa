@@ -145,7 +145,7 @@ public class MenuSalaComercial {
                     switch (opcao) {
                         case 1:
                             System.out.println("\n");
-                            System.out.println("******** Consultar Imóvel Por Titulo ********");
+                            System.out.println("******** Consultar Imóvel Por Codigo ********");
                             System.out.println("\n\n");
                             Consultar();
                             break;
