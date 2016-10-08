@@ -16,7 +16,7 @@ public abstract class Residencia extends Imovel {
     protected int anoConstrucao;
 
     /**
-     *
+     *Metodo Construtor da class Residência
      * @param logradouro
      * @param numero
      * @param bairro
