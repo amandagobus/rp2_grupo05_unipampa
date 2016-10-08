@@ -118,7 +118,15 @@ public class MenuCasa {
                 numero, valor, areaConstruida, numeroQuartos, anoConstrucao,
                 t, numeroDeVagas);
         System.out.println("=======================================");
-        lista.incluir(casa);
+
+        boolean objeto = lista.incluir(casa);
+
+        System.out.println("\n\n");
+        if (objeto == true) {
+            System.out.println("Imóvel incluido com sucesso.");
+        } else {
+            System.out.println("Imóvel não foi incluido.");
+        }
     }
 
     /**
