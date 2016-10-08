@@ -20,6 +20,9 @@ public class MenuCasa {
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
 
+    /**
+     * Método chamado menu, que exibe as opções Novo Imóvel e Consultar
+     */
     public void menuInicial() {
         int opcao = -1;
         do {
@@ -48,6 +51,9 @@ public class MenuCasa {
 
     }
 
+    /**
+     * Método de Incluir um novo Imóvel
+     */
     public void IncluirImovel() {
         String logradouro;
         int numero;
@@ -115,6 +121,9 @@ public class MenuCasa {
         lista.incluir(casa);
     }
 
+    /**
+     * Método de consultar por código
+     */
     public void Consultar() {
         System.out.println("Digite o Código Que Deseja Consultar: ");
         Imovel Imo = lista.consultar(entrada.nextInt());

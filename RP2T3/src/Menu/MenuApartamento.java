@@ -19,6 +19,9 @@ public class MenuApartamento {
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
 
+    /**
+     * Método chamado menu, que exibe as opções Novo Imóvel e Consultar
+     */
     public void menuInicial() {
         int opcao = -1;
         do {
@@ -47,6 +50,9 @@ public class MenuApartamento {
 
     }
 
+    /**
+     * Método de Incluir um novo Imóvel
+     */
     public void IncluirImovel() {
         String logradouro;
         int numero;
@@ -125,6 +131,9 @@ public class MenuApartamento {
         lista.incluir(apartamento);
     }
 
+    /**
+     * Método que consulta o imóvel por código
+     */
     public void Consultar() {
         System.out.println("Digite o Código Que Deseja Consultar: ");
         Imovel Imo = lista.consultar(entrada.nextInt());
@@ -132,7 +141,7 @@ public class MenuApartamento {
 
         if ((Imo != null) && (Imo instanceof Apartamento)) {
             System.out.println("=======================================");
-            System.out.println("\"*****INFORMAÇÕES DO IMÓVEL *****\n");
+            System.out.println("*******INFORMAÇÕES DO IMÓVEL *****\n");
             System.out.println(Imo.toString());
             System.out.println("=======================================");
 
