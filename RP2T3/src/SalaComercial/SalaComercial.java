@@ -17,7 +17,7 @@ public class SalaComercial extends Predio {
     protected int numeroDaSala;
 
     /**
-     *
+     * Metodo construtor da class SalaComercial
      * @param logradouro
      * @param numero
      * @param bairro
@@ -70,7 +70,10 @@ public class SalaComercial extends Predio {
     public void setNumeroDaSala(int numeroDaSala) {
         this.numeroDaSala = numeroDaSala;
     }
-
+    /**
+     * ToString de Sala Comercial, diz ao objeto como se escrever como uma string
+     * @return 
+     */
     @Override
     public String toString() {
         String dados = super.toString();
