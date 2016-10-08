@@ -138,9 +138,5 @@ public class MenuApartamento {
 
     }
 
-    public static void main(String[] args) {
-        MenuApartamento a = new MenuApartamento();
-        a.menu();
-
-    }
+   
 }
