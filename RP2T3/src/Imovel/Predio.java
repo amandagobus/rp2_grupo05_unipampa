@@ -15,6 +15,19 @@ public abstract class Predio extends Imovel {
     protected String nomeEdificio;
     protected int andar;
     protected double valorCondominio;
+    /**
+     * Metodo construtor da class predio.
+     * @param logradouro
+     * @param numero
+     * @param bairro
+     * @param cidade
+     * @param descricao
+     * @param areaTotal
+     * @param valor
+     * @param nomeEdificio
+     * @param andar
+     * @param valorCondominio 
+     */
 
     public Predio(String logradouro, int numero, String bairro,
             String cidade, String descricao, double areaTotal, double valor,
@@ -69,6 +82,11 @@ public abstract class Predio extends Imovel {
         this.valorCondominio = valorCondominio;
     }
 
+    
+    /**
+     * Metodo toString do objeto, predio.
+     * @return 
+     */
     @Override
     public String toString() {
         String dados = super.toString();
