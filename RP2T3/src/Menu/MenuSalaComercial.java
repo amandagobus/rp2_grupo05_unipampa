@@ -110,9 +110,9 @@ public class MenuSalaComercial {
         
         System.out.println("\n\n");
         if(objeto == true){
-            System.out.println("Imovél incluido com sucesso.");
+            System.out.println("Imóvel incluido com sucesso.");
         }else{
-            System.out.println("Imovél não foi incluido.");
+            System.out.println("Imóvel não foi incluido.");
         }
 
     }
