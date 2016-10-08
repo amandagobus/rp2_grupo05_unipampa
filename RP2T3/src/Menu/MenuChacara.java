@@ -60,7 +60,6 @@ public class MenuChacara {
         int numeroQuartos;
         int anoConstucao;
         double distCidade;
-        
 
         System.out.println("Digite o Logradouro:  ");
         logradouro = entrada.nextLine();
@@ -85,7 +84,7 @@ public class MenuChacara {
         System.out.println("Digite o Valor do Imóvel:  ");
         valor = entrada.nextDouble();
         entrada.nextLine();
-        
+
         System.out.println("Digite a Área Construída:  ");
         areaConstruida = entrada.nextDouble();
         entrada.nextLine();
@@ -100,12 +99,17 @@ public class MenuChacara {
 
         System.out.println("Digite a Distância da Cidade:  ");
         distCidade = entrada.nextDouble();
-       
 
         Imovel chacara = new Chacara(distCidade, logradouro, numero, bairro, cidade, descricao, areaTotal, valor,
-            areaConstruida, numeroQuartos, anoConstucao);
+                areaConstruida, numeroQuartos, anoConstucao);
 
-        lista.incluir(chacara);
+        boolean objeto = lista.incluir(chacara);
+        System.out.println("\n\n");
+        if (objeto == true) {
+            System.out.println("Imóvel incluido com sucesso.");
+        } else {
+            System.out.println("Imóvel não foi incluido.");
+        }
 
     }
 
@@ -114,7 +118,7 @@ public class MenuChacara {
         Imovel Imo = lista.consultar(entrada.nextInt());
         entrada.nextLine();
 
-        if ((Imo != null)&&(Imo instanceof Chacara) ) {
+        if ((Imo != null) && (Imo instanceof Chacara)) {
             System.out.println("--------------------------------------------");
             System.out.println(">>> Informações do Imóvel <<<\n");
             System.out.println(Imo.toString());
