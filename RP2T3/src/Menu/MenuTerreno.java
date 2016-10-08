@@ -11,7 +11,8 @@ import ListaImoveis.ListaDeImoveis;
 import Terreno.Terreno;
 
 /**
- *
+ * Classe que reune os principais metodos de funcionabilidade dos objetos salvos no sistema.
+ * 
  * @author Julielen
  */
 public class MenuTerreno {
@@ -44,6 +45,9 @@ public class MenuTerreno {
 
     }
     
+    /**
+     * Metodo que faz a interação com o usuário
+     */
     public void IncluirImovel() {
 
         String logradouro;
@@ -91,16 +95,26 @@ public class MenuTerreno {
         Imovel Terreno = new Terreno(logradouro, numero, bairro, cidade,
                 descricao, areaTotal, valor, dimensaoFrente, dimensaoLado);
         
-        lista.incluir(Terreno);       
-}
+        boolean objeto = lista.incluir(Terreno);
+        
+        if(objeto == true){
+            System.out.println("Imovél incluído com sucesso.");
+        }else{
+            System.out.println("Imovél não foi incluído.");     
+        }
+    }
     
-    
+    /**
+     * Metodo que recebe uma informação do usuario, e consulta por codigo se o objeto esta
+     * na listaImoveis.
+     */
     public void Consultar() {
         System.out.println("Digite o Código Que Deseja Consultar: ");
         Imovel Imo = lista.consultar(entrada.nextInt());
         entrada.nextLine();
 
         if ((Imo != null)&&(Imo instanceof Terreno) ) {
+            System.out.println("=======================================");
             System.out.println(Imo.toString());
 
         } else if (Imo == null) {
@@ -161,6 +175,7 @@ public class MenuTerreno {
 
         } while (i != 0);
 
+        }
+        
     }
 
-}
