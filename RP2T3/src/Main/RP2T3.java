@@ -27,8 +27,8 @@ public class RP2T3 {
         while (op != 0) {
             System.out.println(" ");
             System.out.println("******** BEM VINDO AO MENU ********");
-            System.out.println("0) Sair\n1) Resumo\n2) Palestras\n3) Mini Curso\n"
-                    + "4) Artigo \n5) Monografia");
+            System.out.println("0) SAIR \n1) APARTAMENTO \n2) CASA \n3) CHACARA\n"
+                    + "4) SALA COMERCIAL \n5) TERRENO");
             System.out.println(" ");
             System.out.print("Opção: ");
             op = entrada.nextInt();
