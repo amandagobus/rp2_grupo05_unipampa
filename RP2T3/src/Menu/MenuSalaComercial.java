@@ -108,6 +108,7 @@ public class MenuSalaComercial {
 
         boolean objeto = lista.incluir(salaC);
         
+        System.out.println("\n\n");
         if(objeto == true){
             System.out.println("Imovél incluido com sucesso.");
         }else{
