@@ -15,8 +15,8 @@ import java.util.Scanner;
  * @author Arcano
  */
 public class RP2T3 {
-
-    public static void main(String[] args) {
+    
+       public static void main(String[] args) {
 
         MenuSalaComercial salaC = new MenuSalaComercial();
         MenuApartamento Ap = new MenuApartamento();
