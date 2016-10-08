@@ -61,44 +61,44 @@ public class MenuSalaComercial {
         int numeroDeBanheiros;
         int numeroDaSala;
 
-        System.out.println("Digite o Logradouro:  ");
+        System.out.print("Digite o Logradouro:  ");
         logradouro = entrada.nextLine();
 
-        System.out.println("Digite o Número:  ");
+        System.out.print("Digite o Número:  ");
         numero = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("Digite o Bairro:  ");
+        System.out.print("Digite o Bairro:  ");
         bairro = entrada.nextLine();
 
-        System.out.println("Digite a Cidade:  ");
+        System.out.print("Digite a Cidade:  ");
         cidade = entrada.nextLine();
 
-        System.out.println("Digite Uma Descrição:  ");
+        System.out.print("Digite Uma Descrição:  ");
         descricao = entrada.nextLine();
 
-        System.out.println("Digite a Área Total:  ");
+        System.out.print("Digite a Área Total:  ");
         areaTotal = entrada.nextDouble();
         entrada.nextLine();
 
-        System.out.println("Digite o Valor do Imóvel:  ");
+        System.out.print("Digite o Valor do Imóvel:  ");
         valor = entrada.nextDouble();
         entrada.nextLine();
-        System.out.println("Digite o Nome do Edifício:  ");
+        System.out.print("Digite o Nome do Edifício:  ");
         nomeEdifico = entrada.nextLine();
 
-        System.out.println("Digite o Número do Andar:  ");
+        System.out.print("Digite o Número do Andar:  ");
         andar = entrada.nextInt();
 
-        System.out.println("Digite o Valor do Condominio:  ");
+        System.out.print("Digite o Valor do Condominio:  ");
         valorCondominio = entrada.nextDouble();
         entrada.nextLine();
         
-        System.out.println("Digite o Número da Sala:  ");
+        System.out.print("Digite o Número da Sala:  ");
         numeroDaSala = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("Digite o Número de Banheiros:  ");
+        System.out.print("Digite o Número de Banheiros:  ");
         numeroDeBanheiros = entrada.nextInt();
         entrada.nextLine();
 
