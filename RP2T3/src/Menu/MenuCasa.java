@@ -20,7 +20,7 @@ public class MenuCasa {
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
 
-    public void menu() {
+    public void menuInicial() {
         int opcao = -1;
         do {
             System.out.println(" \n");
@@ -131,10 +131,5 @@ public class MenuCasa {
 
     }
 
-    public static void main(String[] args) {
-        MenuCasa c = new MenuCasa();
-        c.menu();
-
-    }
-
+   
 }

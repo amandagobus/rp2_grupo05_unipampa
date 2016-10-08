@@ -21,25 +21,25 @@ public class MenuSalaComercial {
 
     public static void menu() {
         System.out.println(" \n");
-        System.out.println("***** Menu *****\n");
-        System.out.println("1) Novo Imóvel ");
-        System.out.println("2) Consultar");
-        System.out.println("3) Editar ");
-        System.out.println("4) Excluir");
-        System.out.println("0) Voltar ");
+        System.out.println("***** MENU *****\n");
+        System.out.println("1) NOVO IMOVÉL SALA COMERCIAL");
+        System.out.println("2) CONSULTAR");
+        //System.out.println("3) Editar ");
+        //System.out.println("4) Excluir");
+        System.out.println("0) VOLTAR ");
         System.out.println(" ");
-        System.out.print("Opção:    ");
+        System.out.print("OPÇÃO:    ");
 
     }
 
     public static void menu2() {
         System.out.println(" \n");
-        System.out.println("*************** Menu de Consulta *****************");
+        System.out.println("*************** MENU DE CONSULTA *****************");
         System.out.println(" \n");
-        System.out.println("1) Código  ");
-        System.out.println("0) Voltar ");
+        System.out.println("1) CÓDIGO  ");
+        System.out.println("0) VOLTAR ");
         System.out.println("\n ");
-        System.out.print("Opcao:     ");
+        System.out.print("OPÇÃO:     ");
 
     }
 
@@ -108,6 +108,7 @@ public class MenuSalaComercial {
     }
 
     public void Consultar() {
+        System.out.println("\n");
         System.out.println("Digite o Código Que Deseja Consultar: ");
         Imovel Imo = lista.consultar(entrada.nextInt());
         entrada.nextLine();
@@ -145,7 +146,7 @@ public class MenuSalaComercial {
                     switch (opcao) {
                         case 1:
                             System.out.println("\n");
-                            System.out.println("******** Consultar Imóvel Por Titulo ********");
+                            System.out.println("******** Consultar Imóvel Por Codigo ********");
                             System.out.println("\n\n");
                             Consultar();
                             break;
