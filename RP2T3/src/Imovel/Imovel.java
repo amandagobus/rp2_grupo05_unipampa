@@ -174,7 +174,7 @@ public abstract class Imovel {
         dados += "Cidade: " + cidade + "\n";
         dados += "Descrição: " + descricao + "\n";
         dados += "Area Total: " + areaTotal + "\n";
-        dados += "Valor:" + valor + "\n";
+        dados += "Valor: " + valor + "\n";
 
         return dados;
     }
