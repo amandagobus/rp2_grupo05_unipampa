@@ -6,6 +6,7 @@
 package Casa;
 
 import Imovel.Residencia;
+import Imovel.Tipo;
 
 /**
  *
@@ -13,7 +14,7 @@ import Imovel.Residencia;
  */
 public class Casa extends Residencia {
 
-    private String tipo;
+    private Tipo tipo;
     private int numeroDeVagas;
 
     /**
@@ -30,17 +31,17 @@ public class Casa extends Residencia {
      * @param anoConstucao
      * @param numeroDeVagas
      */
-    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao, String tipo, int numeroDeVagas) {
+    public Casa(String logradouro, int numero, String bairro, String cidade, String descricao, int areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao, Tipo tipo, int numeroDeVagas) {
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstucao);
         this.tipo = tipo;
         this.numeroDeVagas = numeroDeVagas;
     }
 
-    public String getTipo() {
+    public Tipo getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
 

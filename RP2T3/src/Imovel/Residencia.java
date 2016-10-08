@@ -85,7 +85,7 @@ public abstract class Residencia extends Imovel {
 
     @Override
     public String toString() {
-        String dados = "";
+        String dados = super.toString();
         dados += "Area Construida: " + areaConstruida + "\n";
         dados += "Número De Quartos: " + numeroQuartos + "\n";
         dados += "Ano Da Costrução: " + anoConstrucao + "\n";
