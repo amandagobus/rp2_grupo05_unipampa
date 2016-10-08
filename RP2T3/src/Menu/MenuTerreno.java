@@ -105,7 +105,7 @@ public class MenuTerreno {
     }
     
     /**
-     * Metodo que recebe uma informação do usuario, e consulta se o objeto esta
+     * Metodo que recebe uma informação do usuario, e consulta por codigo se o objeto esta
      * na listaImoveis.
      */
     public void Consultar() {
@@ -114,6 +114,7 @@ public class MenuTerreno {
         entrada.nextLine();
 
         if ((Imo != null)&&(Imo instanceof Terreno) ) {
+            System.out.println("=======================================");
             System.out.println(Imo.toString());
 
         } else if (Imo == null) {
@@ -174,6 +175,7 @@ public class MenuTerreno {
 
         } while (i != 0);
 
+        }
+        
     }
 
-}
