@@ -19,7 +19,7 @@ public class MenuApartamento {
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
 
-    public void menuInicial() {
+    public void menu() {
         int opcao = -1;
         do {
             System.out.println(" \n");
