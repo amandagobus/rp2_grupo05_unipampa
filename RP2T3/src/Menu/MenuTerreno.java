@@ -98,14 +98,14 @@ public class MenuTerreno {
         boolean objeto = lista.incluir(Terreno);
         
         if(objeto == true){
-            System.out.println("Imovél incluído com sucesso.");
+            System.out.println("Imóvel incluído com sucesso.");
         }else{
-            System.out.println("Imovél não foi incluído.");     
+            System.out.println("Imóvel não foi incluído.");     
         }
     }
     
     /**
-     * Metodo que recebe uma informação do usuario, e consulta por codigo se o objeto esta
+     * Método que recebe uma informação do usuario, e consulta por código se o objeto esta
      * na listaImoveis.
      */
     public void Consultar() {
