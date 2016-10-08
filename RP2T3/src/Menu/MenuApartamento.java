@@ -47,7 +47,6 @@ public class MenuApartamento {
 
     }
 
-
     public void IncluirImovel() {
         String logradouro;
         int numero;
@@ -65,56 +64,58 @@ public class MenuApartamento {
         int andar;
         double valorCondominio;
 
-        System.out.println("Digite o Logradouro:  ");
+        System.out.println("=======================================");
+        System.out.print("Digite o Logradouro:  ");
         logradouro = entrada.nextLine();
 
-        System.out.println("Digite o Número:  ");
+        System.out.print("Digite o Número:  ");
         numero = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("Digite o Bairro:  ");
+        System.out.print("Digite o Bairro:  ");
         bairro = entrada.nextLine();
 
-        System.out.println("Digite a Cidade:  ");
+        System.out.print("Digite a Cidade:  ");
         cidade = entrada.nextLine();
 
-        System.out.println("Digite Uma Descrição:  ");
+        System.out.print("Digite Uma Descrição:  ");
         descricao = entrada.nextLine();
 
-        System.out.println("Digite a Área Total:  ");
+        System.out.print("Digite a Área Total:  ");
         areaTotal = entrada.nextDouble();
         entrada.nextLine();
 
-        System.out.println("Digite o Valor do Imóvel:  ");
+        System.out.print("Digite o Valor do Imóvel:  ");
         valor = entrada.nextDouble();
         entrada.nextLine();
 
-        System.out.println("Digite o Nome do Edifício:  ");
+        System.out.print("Digite o Nome do Edifício:  ");
         nomeEdificio = entrada.nextLine();
 
-        System.out.println("Digite o Número de Quartos:  ");
+        System.out.print("Digite o Número de Quartos:  ");
         numeroQuartos = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("Digite o Número de Vagas na garagem:  ");
+        System.out.print("Digite o Número de Vagas na garagem:  ");
         numeroVagas = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("Digite o Ano de Construção:  ");
+        System.out.print("Digite o Ano de Construção:  ");
         anoDeConstrucao = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("Digite o Número do Apartamento:  ");
+        System.out.print("Digite o Número do Apartamento:  ");
         numeroDoApartamento = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("Digite o Número do Andar:  ");
+        System.out.print("Digite o Número do Andar:  ");
         andar = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("Digite o Valor do Condominio:  ");
+        System.out.print("Digite o Valor do Condominio:  ");
         valorCondominio = entrada.nextDouble();
         entrada.nextLine();
+        System.out.println("=======================================");
 
         Imovel apartamento = new Apartamento(logradouro, numero, bairro,
                 cidade, descricao, areaTotal, valor, nomeEdificio, andar,
@@ -130,7 +131,10 @@ public class MenuApartamento {
         entrada.nextLine();
 
         if ((Imo != null) && (Imo instanceof Apartamento)) {
+            System.out.println("=======================================");
+            System.out.println("\"*****INFORMAÇÕES DO IMÓVEL *****\n");
             System.out.println(Imo.toString());
+            System.out.println("=======================================");
 
         } else {
             System.out.println("Imóvel Não Cadastrado.");
@@ -138,5 +142,4 @@ public class MenuApartamento {
 
     }
 
-   
 }
