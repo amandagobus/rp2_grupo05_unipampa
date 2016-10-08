@@ -15,21 +15,34 @@ import Terreno.Terreno;
  * @author Julielen
  */
 public class MenuTerreno {
+    
     ListaDeImoveis lista = new ListaDeImoveis();
     Scanner entrada = new Scanner(System.in);
     
     public static void menu() {
+        
         System.out.println(" \n");
         System.out.println("***** Menu *****\n");
-        System.out.println("[1] Novo Imovél ");
+        System.out.println("[1] Novo Imóvel Terreno ");
         System.out.println("[2] Consultar");
-        System.out.println("[3] Editar ");
-        System.out.println("[4] Excluir");
+        //System.out.println("[3] Editar ");
+        //System.out.println("[4] Excluir");
         System.out.println("[0] Voltar ");
         System.out.println(" ");
         System.out.print("Opção:    ");
+        }
+        
+ 
+    public static void menu2() {
+        System.out.println(" \n");
+        System.out.println("*************** MENU DE CONSULTA *****************");
+        System.out.println(" \n");
+        System.out.println("[1] Código  ");
+        System.out.println("[0] Voltar ");
+        System.out.println("\n ");
+        System.out.print("Opção:     ");
+
     }
-    
     
     public void IncluirImovel() {
 
@@ -69,15 +82,19 @@ public class MenuTerreno {
         
         System.out.println("Digite a Dimensão Frente:  ");
         dimensaoFrente = entrada.nextDouble();
+        entrada.nextLine();
         
         System.out.println("Digite a Dimensão Lado:  ");
         dimensaoLado = entrada.nextDouble();
+        entrada.nextLine();
         
         Imovel Terreno = new Terreno(logradouro, numero, bairro, cidade,
                 descricao, areaTotal, valor, dimensaoFrente, dimensaoLado);
         
         lista.incluir(Terreno);       
 }
+    
+    
     public void Consultar() {
         System.out.println("Digite o Código Que Deseja Consultar: ");
         Imovel Imo = lista.consultar(entrada.nextInt());
@@ -92,4 +109,58 @@ public class MenuTerreno {
             
         }
     }
+    
+    public void menuInicial() {
+        int i;
+
+        do {
+            MenuTerreno.menu();
+            i = entrada.nextInt();
+            entrada.nextLine();
+
+            switch (i) {
+                case 1:
+                    System.out.println("\n");
+                    System.out.println("*********** Incluir Imóvel ************");
+                    System.out.println("\n");
+                    IncluirImovel();
+                    break;
+
+                case 2:
+                    MenuTerreno.menu2();
+                    int opcao = entrada.nextInt();
+                    entrada.nextLine();
+
+                    switch (opcao) {
+                        case 1:
+                            System.out.println("\n");
+                            System.out.println("******** Consultar Imóvel Por Codigo ********");
+                            System.out.println("\n\n");
+                            Consultar();
+                            break;
+
+                        default:
+                            break;
+
+                    }
+                    break;
+
+                case 3:
+
+                    break;
+
+                case 4:
+
+                    break;
+
+                case 5:
+
+                    break;
+
+            }
+
+        } while (i != 0);
+
+    }
+
 }

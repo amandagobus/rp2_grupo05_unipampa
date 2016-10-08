@@ -8,6 +8,7 @@ package Main;
 import Menu.MenuApartamento;
 import Menu.MenuCasa;
 import Menu.MenuSalaComercial;
+import Menu.MenuTerreno;
 import java.util.Scanner;
 
 /**
@@ -21,14 +22,15 @@ public class RP2T3 {
         MenuSalaComercial salaC = new MenuSalaComercial();
         MenuApartamento Ap = new MenuApartamento();
         MenuCasa casa = new MenuCasa();
+        MenuTerreno terreno = new MenuTerreno();
         int op = 1;
         Scanner entrada = new Scanner(System.in);
 
         while (op != 0) {
             System.out.println(" ");
             System.out.println("******** BEM VINDO AO MENU ********");
-            System.out.println("0) SAIR \n1) APARTAMENTO \n2) CASA \n3) CHACARA\n"
-                    + "4) SALA COMERCIAL \n5) TERRENO");
+            System.out.println("1) APARTAMENTO \n2) CASA \n3) CHACARA\n"
+                    + "4) SALA COMERCIAL \n5) TERRENO \n0)Sair");
             System.out.println(" ");
             System.out.print("Opção: ");
             op = entrada.nextInt();
@@ -45,16 +47,20 @@ public class RP2T3 {
                     System.out.println(" ");
                     casa.menuInicial();
                     break;
+                    
                 case (3):
                     System.out.println(" ");
                     //chacara.menuInicial();
                     break;
+                    
                 case (4):
                     System.out.println(" ");
                     salaC.menuInicial();
                     break;
+                    
                 case (5):
-                    // terreno.MenuInicial();
+                    System.out.println(" ");
+                    terreno.menuInicial();
                     break;
             }
         }

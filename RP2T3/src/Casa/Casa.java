@@ -37,18 +37,31 @@ public class Casa extends Residencia {
         this.numeroDeVagas = numeroDeVagas;
     }
 
+    /**
+     * 
+     * @return Tipo
+     */
     public Tipo getTipo() {
         return tipo;
     }
-
+/**
+ * 
+ * @param tipo 
+ */
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
-
+/**
+ * 
+ * @return NumeroDeVagas
+ */
     public int getNumeroDeVagas() {
         return numeroDeVagas;
     }
-
+    /**
+     * 
+     * @param numeroDeVagas 
+     */
     public void setNumeroDeVagas(int numeroDeVagas) {
         this.numeroDeVagas = numeroDeVagas;
     }

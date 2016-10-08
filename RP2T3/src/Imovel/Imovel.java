@@ -20,9 +20,10 @@ public abstract class Imovel {
     protected String descricao;
     protected double areaTotal;
     protected double valor;
-    
+
     /**
      * Construtor da Super Classe Imovéis
+     *
      * @param codigo
      * @param logradouro
      * @param numero
@@ -30,11 +31,11 @@ public abstract class Imovel {
      * @param cidade
      * @param descricao
      * @param areaTotal
-     * @param valor 
+     * @param valor
      */
     public Imovel(String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor) {
         this.codigo = codigoGeral;
-             codigoGeral++;
+        codigoGeral++;
         this.logradouro = logradouro;
         this.numero = numero;
         this.bairro = bairro;
@@ -155,14 +156,15 @@ public abstract class Imovel {
     public void setValor(int valor) {
         this.valor = valor;
     }
-    
+
     /**
-     * Diz como o Objeto imoveis deve se escrever  como uma String.
+     * Diz como o Objeto imoveis deve se escrever como uma String.
+     *
      * @return dados, String.
      */
     @Override
     public String toString() {
-        
+
         String dados = " ";
         dados += "\n";
         dados += "Codigo: " + codigo + "\n";
