@@ -16,7 +16,7 @@ import Imovel.ListaImoveis;
  */
 public class ListaDeImoveis implements ListaImoveis {
 
-    static List<Imovel> lista = new ArrayList<>();
+     List<Imovel> lista = new ArrayList<>();
 
     @Override
     public boolean incluir(Imovel im) {

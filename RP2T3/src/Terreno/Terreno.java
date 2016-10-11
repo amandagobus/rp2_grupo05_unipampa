@@ -8,7 +8,7 @@ package Terreno;
 import Imovel.Imovel;
 
 /**
- *
+ * Classe para objetos do tipo Terreno, onde serão contidos valores e métodos para o mesmo.
  * @author Julielen
  */
 public class Terreno extends Imovel {
@@ -17,7 +17,7 @@ public class Terreno extends Imovel {
     private double dimensaoLado;
     
     /**
-     * 
+     * Construtor Classe Terreno que estende atributos da classe Imovel
      * @param logradouro
      * @param numero
      * @param bairro
@@ -63,7 +63,10 @@ public class Terreno extends Imovel {
     public void setDimensaoLado(double dimensaoLado) {
         this.dimensaoLado = dimensaoLado;
     }
-
+     /**
+     * ToString de Terreno, diz ao objeto como se escrever como uma string
+     * @return 
+     */
     @Override
     public String toString() {
         String dados = super.toString();
