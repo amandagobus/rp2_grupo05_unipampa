@@ -40,12 +40,24 @@ public class ListaDeImoveis implements ListaImoveis {
 
     @Override
     public boolean editar(int codigo, Imovel im) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      boolean  objeto; 
+    objeto = excluir(codigo);
+    if(objeto == true){
+    lista.add(im);
+    return true;
+     }else {
+    return false;}
     }
 
     @Override
     public boolean excluir(int codigo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    Imovel imo = consultar(codigo);    
+    if(imo != null){
+    lista.remove(imo);
+    return true;
+    } else{
+    return false;
+     }
     }
 
     @Override
