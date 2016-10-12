@@ -101,9 +101,7 @@ public class ListaDeImoveis implements ListaImoveis {
     }
 
     public void gravar() throws Exception{
-    FileWriter outFile;
-       
-    outFile = new FileWriter(new File("C:/Users/Arcano/Desktop/novo.CSV"));
+    FileWriter outFile = new FileWriter(new File("C:/Users/Arcano/Desktop/novo.CSV"));
     BufferedWriter  escrever = new  BufferedWriter(outFile); 
     
     
