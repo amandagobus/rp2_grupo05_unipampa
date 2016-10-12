@@ -12,6 +12,7 @@ import Imovel.ListaImoveis;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.OutputStreamWriter;
 
 /**
@@ -100,21 +101,19 @@ public class ListaDeImoveis implements ListaImoveis {
     }
 
     public void gravar() throws Exception{
-    FileOutputStream outFile;
-    BufferedWriter buff;    
-    outFile = new FileOutputStream(new File("c\\Bibliotecas\\Documentos\\NetBeansProjects\\rp2_grupo06_unipampa\\RP2T3"));
-    buff = new BufferedWriter(new OutputStreamWriter(outFile, "UTF-8"));
-    buff.write(lista.size());
+    FileWriter outFile;
+       
+    outFile = new FileWriter(new File("C:/Users/Arcano/Desktop/novo.CSV"));
+    BufferedWriter  escrever = new  BufferedWriter(outFile); 
+    
     
         for (Imovel imovel : lista) {         
-            buff.write(imovel.getCodigo()+"," +imovel.getLogradouro()+","+imovel.getNumero()+","+imovel.getBairro()
-                    +","+imovel.getCidade()+","+imovel.getDescricao());
-            
-            
-            buff.write("\n");
+            escrever.write(imovel.getCodigo());
+            escrever.write("\n");
+            escrever.write(imovel.getCidade());
+            escrever.write("\n");
         }
-        
-        buff.close();
+        escrever.close();
         outFile.close();
        
     }

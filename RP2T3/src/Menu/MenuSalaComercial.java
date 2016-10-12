@@ -10,6 +10,8 @@ import ListaImoveis.ListaDeImoveis;
 import SalaComercial.SalaComercial;
 import java.io.FileWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  **
@@ -109,6 +111,7 @@ public class MenuSalaComercial {
                 numeroDeBanheiros, numeroDaSala);
 
         boolean objeto = lista.incluir(salaC);
+     
         
         System.out.println("\n\n");
         if(objeto == true){
@@ -116,7 +119,11 @@ public class MenuSalaComercial {
         }else{
             System.out.println("Imóvel não foi incluido.");
         }
-
+        try {
+            lista.gravar();
+        } catch (Exception ex) {
+            Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
