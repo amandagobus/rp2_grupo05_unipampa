@@ -9,6 +9,10 @@ import Imovel.Imovel;
 import java.util.ArrayList;
 import java.util.List;
 import Imovel.ListaImoveis;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 
 /**
  *
@@ -95,4 +99,23 @@ public class ListaDeImoveis implements ListaImoveis {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public void gravar() throws Exception{
+    FileOutputStream outFile;
+    BufferedWriter buff;    
+    outFile = new FileOutputStream(new File("c\\Bibliotecas\\Documentos\\NetBeansProjects\\rp2_grupo06_unipampa\\RP2T3"));
+    buff = new BufferedWriter(new OutputStreamWriter(outFile, "UTF-8"));
+    buff.write(lista.size());
+    
+        for (Imovel imovel : lista) {         
+            buff.write(imovel.getCodigo()+"," +imovel.getLogradouro()+","+imovel.getNumero()+","+imovel.getBairro()
+                    +","+imovel.getCidade()+","+imovel.getDescricao());
+            
+            
+            buff.write("\n");
+        }
+        
+        buff.close();
+        outFile.close();
+       
+    }
 }

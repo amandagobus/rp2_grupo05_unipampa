@@ -8,6 +8,7 @@ package Menu;
 import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import SalaComercial.SalaComercial;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 /**
@@ -136,7 +137,8 @@ public class MenuSalaComercial {
         }
 
     }
-
+    
+    
     public void menuInicial() {
         int i;
 
