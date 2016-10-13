@@ -8,7 +8,10 @@ package Menu;
 import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import SalaComercial.SalaComercial;
+import java.io.FileWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  **
@@ -44,7 +47,8 @@ public class MenuSalaComercial {
     }
 
     /**
-     * Metodo que faz a interação com o usuário
+     * Metodo que faz a interação com o usuário, passando após as informações 
+     * para o construtor.
      */
     public void IncluirImovel() {
 
@@ -107,13 +111,19 @@ public class MenuSalaComercial {
                 numeroDeBanheiros, numeroDaSala);
 
         boolean objeto = lista.incluir(salaC);
+     
         
+        System.out.println("\n\n");
         if(objeto == true){
             System.out.println("Imóvel incluido com sucesso.");
         }else{
             System.out.println("Imóvel não foi incluido.");
         }
-
+        try {
+            lista.gravar();
+        } catch (Exception ex) {
+            Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -134,7 +144,8 @@ public class MenuSalaComercial {
         }
 
     }
-
+    
+    
     public void menuInicial() {
         int i;
 
