@@ -43,20 +43,23 @@ public abstract class Predio extends Imovel {
     /**
      * @return the NomeEdifico
      */
-    public String getNomeEdifico() {
+    @Override
+    public String getNomeEdificio() {
         return nomeEdificio;
     }
 
     /**
      * @param NomeEdificio the NomeEdifico to set
      */
-    public void setNomeEdifico(String NomeEdificio) {
+    @Override
+    public void setNomeEdificio(String NomeEdificio) {
         this.nomeEdificio = NomeEdificio;
     }
 
     /**
      * @return the andar
      */
+    @Override
     public int getAndar() {
         return andar;
     }
@@ -64,6 +67,7 @@ public abstract class Predio extends Imovel {
     /**
      * @param andar the andar to set
      */
+    @Override
     public void setAndar(int andar) {
         this.andar = andar;
     }
@@ -71,6 +75,7 @@ public abstract class Predio extends Imovel {
     /**
      * @return the valorCondominio
      */
+    @Override
     public double getValorCondominio() {
         return valorCondominio;
     }
@@ -78,6 +83,7 @@ public abstract class Predio extends Imovel {
     /**
      * @param valorCondominio the valorCondominio to set
      */
+    @Override
     public void setValorCondominio(double valorCondominio) {
         this.valorCondominio = valorCondominio;
     }
