@@ -156,6 +156,54 @@ public abstract class Imovel {
     public void setValor(int valor) {
         this.valor = valor;
     }
+    
+    
+    //Bloco com os metodos abstratos, USAR em Editar, e para escrver Arquivos.
+    
+    
+    double i;
+    int k;
+    String st;
+    
+    public int getNumeroDeBanheiros(){    
+    return k;
+    }
+    
+    public int getNumeroDaSala(){
+    return k;
+    }
+    
+    public String getNomeEdificio(){
+    return st;
+    }
+    
+    public int getAndar(){
+    return k;
+    }
+    
+    public double getValorCondominio(){
+    return i;
+    }
+    
+    public void setNumeroDeBanheiros(int k){    
+   
+    }
+    
+    public void setNumeroDaSala(int k){
+  
+    }
+    
+    public void setNomeEdificio(String st){
+    
+    }
+    
+    public void setAndar(int k){
+    
+    }
+    
+    public void setValorCondominio(double i){
+    }
+    
 
     /**
      * Diz como o Objeto imoveis deve se escrever como uma String.
