@@ -104,12 +104,16 @@ public class ListaDeImoveis implements ListaImoveis {
     FileWriter outFile = new FileWriter(new File("C:/Users/Arcano/Desktop/novo.CSV"));
     BufferedWriter  escrever = new  BufferedWriter(outFile); 
     
-    
+     escrever.write("CODIGO,LOGRADOURO,NÚMERO,BAIRRO,CIDADE,DESCRIÇÃO,AREA TOTAL,VALOR,NOME DO EDIFICIO,ANDAR,VALOR DO CONDOMINIO,"
+             + "NÚMERO DE SALAS,NÚMERO DE BANHEIROS\r\n");
         for (Imovel imovel : lista) {         
-            escrever.write(imovel.getCodigo());
-            escrever.write("\n");
-            escrever.write(imovel.getCidade());
-            escrever.write("\n");
+            escrever.write(imovel.getCodigo()+","+imovel.getLogradouro()+","+imovel.getNumero()
+                    +","+imovel.getBairro()+","+imovel.getCidade()+","+imovel.getDescricao()+","+imovel.getAreaTotal()
+                    +","+imovel.getValor()+","+imovel.getNomeEdificio()+","+imovel.getAndar()+","+imovel.getValorCondominio()
+                    +","+imovel.getNumeroDaSala()+","+imovel.getNumeroDeBanheiros());  
+            escrever.write("\r\n");
+            
+           
         }
         escrever.close();
         outFile.close();
