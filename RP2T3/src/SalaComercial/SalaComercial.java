@@ -46,6 +46,7 @@ public class SalaComercial extends Predio {
     /**
      * @return the numeroDeBanheiros
      */
+    @Override
     public int getNumeroDeBanheiros() {
         return numeroDeBanheiros;
     }
@@ -60,6 +61,7 @@ public class SalaComercial extends Predio {
     /**
      * @return the numeroDaSala
      */
+    @Override
     public int getNumeroDaSala() {
         return numeroDaSala;
     }
