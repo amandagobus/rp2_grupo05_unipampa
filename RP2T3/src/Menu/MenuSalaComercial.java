@@ -9,6 +9,7 @@ import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import SalaComercial.SalaComercial;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -147,13 +148,14 @@ public class MenuSalaComercial {
     }
 
     public void Carregar() {
-
+     
         
         try {
             lista.ler();
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         
 
     }
