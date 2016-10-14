@@ -126,8 +126,7 @@ public class ListaDeImoveis implements ListaImoveis {
     }
 
     public void ler() throws Exception {
-        
-        
+
         String logradouro, bairro, cidade, descricao, nomeEdificio;
         int codigo, numero, andar, numeroSala, NumeroBanheiro;
         double areaTotal, valor, valorCondominio;
@@ -135,9 +134,8 @@ public class ListaDeImoveis implements ListaImoveis {
         FileReader inFile = new FileReader(new File("C:/Users/Arcano/Desktop/novo.CSV"));
         Scanner ler = new Scanner(inFile);
 
-       
         String linha = ler.nextLine();
-        
+
         while (ler.hasNext()) {
             linha = ler.nextLine();
             String parte[] = linha.split(",");
@@ -154,13 +152,11 @@ public class ListaDeImoveis implements ListaImoveis {
             valorCondominio = Double.parseDouble(parte[10]);
             numeroSala = Integer.parseInt(parte[11]);
             NumeroBanheiro = Integer.parseInt(parte[12]);
-            System.out.println(codigo + logradouro+numero+bairro+cidade+descricao+areaTotal+valor+nomeEdificio+
-                    andar+ valorCondominio+ numeroSala+ NumeroBanheiro);
 
-           sala = new SalaComercial(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, nomeEdificio, andar, valorCondominio, NumeroBanheiro, numeroSala);
+            sala = new SalaComercial(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, nomeEdificio, andar, valorCondominio, NumeroBanheiro, numeroSala);
             incluir(sala);
-           ler.close();
-           inFile.close();
+            ler.close();
+            inFile.close();
         }
 
     }
