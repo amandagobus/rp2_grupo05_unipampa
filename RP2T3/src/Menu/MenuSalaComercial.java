@@ -148,19 +148,22 @@ public class MenuSalaComercial {
 
     public void Carregar() {
 
+        
         try {
             lista.ler();
-        } catch (Exception e) {
+        } catch (Exception ex) {
+            Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
 
     }
 
     public void editarControle() {
         
         System.out.println("\n");
-        System.out.println("***********  Menu Editar ************ ");
+        System.out.println("***********  MENU EDITAR ************ ");
         System.out.println("\n ");
-        System.out.println("Digite Titulo Que Deseja  Editar:");
+        System.out.println("DIGITE O CODIGO DO IMOVÉL QUE DESEJA EDITAR:");
         int codigoConsulta = entrada.nextInt();
         entrada.nextLine();
         Imovel editarLista = lista.consultar(codigoConsulta);
@@ -172,29 +175,35 @@ public class MenuSalaComercial {
         if (editarLista != null) {
             do {
                 System.out.println(" \n");
-                System.out.println("Escolha a Opção a Ser Editada:");
+                System.out.println("QUAL INFORMAÇÂO DESEJA EDITAR:");
                 System.out.println(" \n");
-                System.out.println("1) Titulo ");
-                System.out.println("2) Autores");
-                System.out.println("3) Instituição ");
-                System.out.println("4) Palavras Chave ");
-                System.out.println("5) Situação");
-                System.out.println("0) Voltar ");
-                System.out.println(" ");
-                System.out.print("Opção:    ");
+                System.out.println("1)  LOGRADOURO ");
+                System.out.println("2)  NÚMERO");
+                System.out.println("3)  BAIRRO ");
+                System.out.println("4)  CIDADE ");
+                System.out.println("5)  DESCRIÇÃO");
+                System.out.println("6)  ARÉA TOTAL ");
+                System.out.println("7)  VALOR");
+                System.out.println("8)  NOME DO EDÍFIFIO ");
+                System.out.println("9)  ANDAR");
+                System.out.println("10) VALOR DO CONDOMINIO ");
+                System.out.println("11) NÚMERO DE SALAS");
+                System.out.println("12) NÚMERO DE BANHEIROS");
+                System.out.println(" \n");
+                System.out.print("OPÇÃO:    ");
                 editar = entrada.nextInt();
                 entrada.nextLine();
 
                 switch (editar) {
                     case 1:
-                        System.out.println("\n ");
-                        System.out.println("DIGITE O NOVO LOGRADOURO: ");
+                        System.out.print("\n ");
+                        System.out.print("DIGITE O NOVO LOGRADOURO: ");
                         editarLista.setLogradouro(entrada.nextLine());
                         break;
                     case 2:
 
-                        System.out.println("\n\n");
-                        System.out.println("DIGITE O NÚEMRO:");
+                        System.out.print("\n\n");
+                        System.out.print("DIGITE O NÚEMRO:");
                         editarLista.setNumero(entrada.nextInt());
                         entrada.nextLine();
 
@@ -202,55 +211,55 @@ public class MenuSalaComercial {
 
                     case 3:
 
-                        System.out.println("\n");
-                        System.out.println("DIGITE O BAIRRO:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE O BAIRRO:");
                         editarLista.setBairro(entrada.nextLine());
 
                         break;
 
                     case 4:
 
-                        System.out.println("\n");
-                        System.out.println("DIGITE A CIDADE:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE A CIDADE:");
                         editarLista.setCidade(entrada.nextLine());
 
                         break;
 
                     case 5:
 
-                        System.out.println("\n");
-                        System.out.println("DIGITE A DESCRIÇÂO:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE A DESCRIÇÂO:");
                         editarLista.setCidade(entrada.nextLine());
 
                         break;
 
                     case 6:
 
-                        System.out.println("\n");
-                        System.out.println("DIGITE A ARÉA TOTAL:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE A ARÉA TOTAL:");
                         editarLista.setAreaTotal(entrada.nextDouble());
                         entrada.nextLine();
 
                         break;
                      
                     case 7: 
-                        System.out.println("\n");
-                        System.out.println("DIGITE O VALOR:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE O VALOR:");
                         editarLista.setValor(entrada.nextDouble());
                         
                         break;
                         
                     case 8: 
-                        System.out.println("\n");
-                        System.out.println("DIGITE O NOME DO EDIFICIO:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE O NOME DO EDIFICIO:");
                         editarLista.setNomeEdificio(entrada.nextLine());
                         
                         break;
                         
                     case 9:
                         
-                        System.out.println("\n");
-                        System.out.println("DIGITE O ANDAR:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE O ANDAR:");
                         editarLista.setAndar(entrada.nextInt());
                         entrada.nextLine();
                         break;
@@ -258,8 +267,8 @@ public class MenuSalaComercial {
                         
                     case 10:
                         
-                        System.out.println("\n");
-                        System.out.println("DIGITE O VALOR DO CONDOMINIO:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE O VALOR DO CONDOMINIO:");
                         editarLista.setValor(entrada.nextDouble());
                         entrada.nextLine();
                         break;
@@ -267,8 +276,8 @@ public class MenuSalaComercial {
                         
                     case 11:
                         
-                        System.out.println("\n");
-                        System.out.println("DIGITE O NÚMERO DA SALA:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE O NÚMERO DA SALA:");
                         editarLista.setNumeroDaSala(entrada.nextInt());
                         entrada.nextLine();
                         
@@ -277,8 +286,8 @@ public class MenuSalaComercial {
                         
                     case 12:
                         
-                        System.out.println("\n");
-                        System.out.println("DIGITE O NÚMERO DE BANHEIRO:");
+                        System.out.print("\n");
+                        System.out.print("DIGITE O NÚMERO DE BANHEIRO:");
                         editarLista.setNumeroDeBanheiros(entrada.nextInt());
                         entrada.nextLine();
                         
@@ -287,8 +296,12 @@ public class MenuSalaComercial {
                 }
 
             } while (editar != 0);
-
             lista.editar(codigoConsulta, editarLista);
+            try {
+                lista.gravar();
+            } catch (Exception ex) {
+                Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
         } else {
             System.out.println(" \nResumo Não Encotrado ");
@@ -298,7 +311,7 @@ public class MenuSalaComercial {
 
     public void menuInicial() {
         int i;
-        Carregar();
+       
         do {
             MenuSalaComercial.menu();
             i = entrada.nextInt();
