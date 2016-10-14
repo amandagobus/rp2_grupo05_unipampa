@@ -155,8 +155,14 @@ public class MenuApartamento {
             System.out.println("Imóvel Não Cadastrado.");
         }
 
+    }
 
+    public void Excluir() {
 
     }
-    
+
+    public void Editar() {
+
+    }
+
 }
