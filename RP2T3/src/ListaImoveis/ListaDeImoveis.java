@@ -49,20 +49,19 @@ public class ListaDeImoveis implements ListaImoveis {
 
     @Override
     public boolean editar(int codigo, Imovel imo) {
-        boolean objeto;
-        int i = lista.indexOf(codigo);
-        objeto = excluir(codigo);
-        if (objeto == true) {
-            lista.add(i, imo);
-            return true;
-        } else {
-            return false;
+        for (Imovel imovel : lista) {
+            if (imovel.getCodigo() == codigo) {
+                int indice = this.lista.indexOf(imovel);
+                this.lista.set(indice, imo);
+                return true;
+            }
         }
+        return false;
     }
 
     @Override
     public boolean excluir(int codigo) {
-        Imovel imo = consultar(codigo);
+        Imovel imo = this.consultar(codigo);
         if (imo != null) {
             lista.remove(imo);
             return true;
