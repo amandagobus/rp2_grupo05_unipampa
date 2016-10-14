@@ -156,9 +156,11 @@ public class MenuCasa {
     }
 
     /**
-     * Método que exclui um imóvel
+     * Método que exclui um imóvel pelo codigo
      */
     public void Excluir() {
+        System.out.println("Digite o código do imóvel que você deseja excluir: ");
+        
         
     }
 

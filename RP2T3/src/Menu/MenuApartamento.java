@@ -31,7 +31,7 @@ public class MenuApartamento {
             System.out.println("1) Novo Imóvel APARTAMENTO ");
             System.out.println("2) Consultar");
             System.out.println("3) Editar ");
-            //System.out.println("4) Excluir");
+            System.out.println("4) Excluir");
             System.out.println("0) Sair ");
             System.out.println(" ");
             System.out.print("Opção: ");
@@ -48,6 +48,10 @@ public class MenuApartamento {
                     break;
                 case 3:
                     Editar();
+                    break;
+                case 4:
+                    Excluir();
+                    break;
             }
         } while (opcao != 0);
 
@@ -245,7 +249,7 @@ public class MenuApartamento {
                 case " andar:":
                     System.out.print("Digite o Número do Andar: ");
                     apartamento.setAndar(entrada.nextInt());
-                     entrada.nextLine();
+                    entrada.nextLine();
                     break;
 
                 case "valor do condominio":
@@ -260,4 +264,10 @@ public class MenuApartamento {
 
     }
 
+    public void Excluir() {
+        System.out.println("Digite o código do imóvel que você deseja excluir:  ");
+        
+       
+
+    }
 }

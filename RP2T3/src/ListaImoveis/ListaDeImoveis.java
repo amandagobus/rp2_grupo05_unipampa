@@ -14,12 +14,10 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.Scanner;
 
 /**
  *
@@ -49,12 +47,14 @@ public class ListaDeImoveis implements ListaImoveis {
 
     @Override
     public boolean editar(int codigo, Imovel imo) {
+
         for (Imovel imovel : lista) {
             if (imovel.getCodigo() == codigo) {
                 int indice = this.lista.indexOf(imovel);
                 this.lista.set(indice, imo);
                 return true;
             }
+
         }
         return false;
     }
@@ -106,11 +106,15 @@ public class ListaDeImoveis implements ListaImoveis {
     }
 
     public void gravar() throws Exception {
-        FileWriter outFile = new FileWriter(new File("C:/Users/Arcano/Desktop/novo.CSV"));
+
+        //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
+        FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
         BufferedWriter escrever = new BufferedWriter(outFile);
 
         escrever.write("CODIGO,LOGRADOURO,NÚMERO,BAIRRO,CIDADE,DESCRIÇÃO,AREA TOTAL,VALOR,NOME DO EDIFICIO,ANDAR,VALOR DO CONDOMINIO,"
                 + "NÚMERO DE SALAS,NÚMERO DE BANHEIROS\r\n");
+
+        // criar um metodo nas class abstratas Filewhite. 
         for (Imovel imovel : lista) {
             escrever.write(imovel.getCodigo() + "," + imovel.getLogradouro() + "," + imovel.getNumero()
                     + "," + imovel.getBairro() + "," + imovel.getCidade() + "," + imovel.getDescricao() + "," + imovel.getAreaTotal()
@@ -124,40 +128,48 @@ public class ListaDeImoveis implements ListaImoveis {
 
     }
 
-    public void ler() throws Exception {
+    public boolean ler() throws FileNotFoundException, IOException {
 
-        String logradouro, bairro, cidade, descricao, nomeEdificio;
-        int codigo, numero, andar, numeroSala, NumeroBanheiro;
-        double areaTotal, valor, valorCondominio;
-        Imovel sala;
-        FileReader inFile = new FileReader(new File("C:/Users/Arcano/Desktop/novo.CSV"));
-        Scanner ler = new Scanner(inFile);
+        File file = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv");
 
-        String linha = ler.nextLine();
+        if (file.exists()) {
+            FileInputStream arquivo;
+            BufferedReader ler;
+            String linha, logradouro, bairro, cidade, descricao, nomeEdificio;
+            int codigo, numero, andar, numeroSala, NumeroBanheiro;
+            double areaTotal, valor, valorCondominio;
+            Imovel sala;
+            arquivo = new FileInputStream(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
+            ler = new BufferedReader(new InputStreamReader(arquivo, "UTF-8"));
 
-        while (ler.hasNext()) {
-            linha = ler.nextLine();
-            String parte[] = linha.split(",");
-            codigo = Integer.parseInt(parte[0]);
-            logradouro = parte[1];
-            numero = Integer.parseInt(parte[2]);
-            bairro = parte[3];
-            cidade = parte[4];
-            descricao = parte[5];
-            areaTotal = Double.parseDouble(parte[6]);
-            valor = Double.parseDouble(parte[7]);
-            nomeEdificio = parte[8];
-            andar = Integer.parseInt(parte[9]);
-            valorCondominio = Double.parseDouble(parte[10]);
-            numeroSala = Integer.parseInt(parte[11]);
-            NumeroBanheiro = Integer.parseInt(parte[12]);
+            linha = ler.readLine();
+            while ((linha = ler.readLine()) != null) {
+                String parte[] = linha.split(",");
+                codigo = Integer.parseInt(parte[0]);
+                logradouro = parte[1];
+                numero = Integer.parseInt(parte[2]);
+                bairro = parte[3];
+                cidade = parte[4];
+                descricao = parte[5];
+                areaTotal = Double.parseDouble(parte[6]);
+                valor = Double.parseDouble(parte[7]);
+                nomeEdificio = parte[8];
+                andar = Integer.parseInt(parte[9]);
+                valorCondominio = Double.parseDouble(parte[10]);
+                numeroSala = Integer.parseInt(parte[11]);
+                NumeroBanheiro = Integer.parseInt(parte[12]);
 
-            sala = new SalaComercial(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, nomeEdificio, andar, valorCondominio, NumeroBanheiro, numeroSala);
-            incluir(sala);
+                sala = new SalaComercial(logradouro, numero, bairro, cidade,
+                        descricao, areaTotal, valor, nomeEdificio, andar,
+                        valorCondominio, NumeroBanheiro, numeroSala);
+                incluir(sala);
+
+            }
             ler.close();
-            inFile.close();
+            arquivo.close();
+            return true;
+
         }
-
+        return false;
     }
-
 }

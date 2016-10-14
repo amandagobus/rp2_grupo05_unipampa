@@ -9,6 +9,7 @@ import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import SalaComercial.SalaComercial;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,7 +30,7 @@ public class MenuSalaComercial {
         System.out.println("***** MENU *****\n");
         System.out.println("1) NOVO IMÓVEL SALA COMERCIAL");
         System.out.println("2) CONSULTAR");
-        //System.out.println("3) Editar ");
+        System.out.println("3) EDITAR ");
         //System.out.println("4) Excluir");
         System.out.println("0) VOLTAR ");
         System.out.println(" ");
@@ -147,13 +148,14 @@ public class MenuSalaComercial {
     }
 
     public void Carregar() {
-
+     
         
         try {
             lista.ler();
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         
 
     }
@@ -170,13 +172,15 @@ public class MenuSalaComercial {
         entrada.nextLine();
 
         
-        int editar = 0;
+        int k = 1;
 
         if (editarLista != null) {
-            do {
+            
+            while (k != 0){
                 System.out.println(" \n");
                 System.out.println("QUAL INFORMAÇÂO DESEJA EDITAR:");
                 System.out.println(" \n");
+                System.out.println("0)  VOLTAR AO MENU ANTERIOR");
                 System.out.println("1)  LOGRADOURO ");
                 System.out.println("2)  NÚMERO");
                 System.out.println("3)  BAIRRO ");
@@ -191,10 +195,10 @@ public class MenuSalaComercial {
                 System.out.println("12) NÚMERO DE BANHEIROS");
                 System.out.println(" \n");
                 System.out.print("OPÇÃO:    ");
-                editar = entrada.nextInt();
+                k = entrada.nextInt();
                 entrada.nextLine();
 
-                switch (editar) {
+                switch (k) {
                     case 1:
                         System.out.print("\n ");
                         System.out.print("DIGITE O NOVO LOGRADOURO: ");
@@ -292,11 +296,14 @@ public class MenuSalaComercial {
                         entrada.nextLine();
                         
                         break;
- 
+                    
+                    
                 }
 
-            } while (editar != 0);
+            }
+            
             lista.editar(codigoConsulta, editarLista);
+            System.out.println(" aki");
             try {
                 lista.gravar();
             } catch (Exception ex) {
@@ -304,7 +311,7 @@ public class MenuSalaComercial {
             }
 
         } else {
-            System.out.println(" \nResumo Não Encotrado ");
+            System.out.println(" \nImóvel Não Encotrado ");
         }
 
     }
@@ -345,7 +352,8 @@ public class MenuSalaComercial {
                     break;
 
                 case 3:
-
+                    System.out.println("\n");
+                    editarControle();
                     break;
 
                 case 4:
