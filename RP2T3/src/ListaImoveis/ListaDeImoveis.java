@@ -15,13 +15,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.Scanner;
 
 /**
  *
@@ -54,7 +50,7 @@ public class ListaDeImoveis implements ListaImoveis {
         boolean objeto;
         objeto = excluir(codigo);
         if (objeto == true) {
-            lista.add( imo);
+            lista.add(imo);
             return true;
         } else {
             return false;
@@ -110,7 +106,7 @@ public class ListaDeImoveis implements ListaImoveis {
     public void gravar() throws Exception {
 
         //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
-        FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir")+System.getProperty("file.separator")+"Sala.csv"));
+        FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
         BufferedWriter escrever = new BufferedWriter(outFile);
 
         escrever.write("CODIGO,LOGRADOURO,NÚMERO,BAIRRO,CIDADE,DESCRIÇÃO,AREA TOTAL,VALOR,NOME DO EDIFICIO,ANDAR,VALOR DO CONDOMINIO,"
@@ -132,7 +128,7 @@ public class ListaDeImoveis implements ListaImoveis {
 
     public boolean ler() throws FileNotFoundException, IOException {
 
-        File file = new File(System.getProperty("user.dir")+System.getProperty("file.separator")+"Sala.csv");
+        File file = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv");
 
         if (file.exists()) {
             FileInputStream arquivo;
@@ -141,12 +137,11 @@ public class ListaDeImoveis implements ListaImoveis {
             int codigo, numero, andar, numeroSala, NumeroBanheiro;
             double areaTotal, valor, valorCondominio;
             Imovel sala;
-            arquivo = new FileInputStream(new File(System.getProperty("user.dir")+System.getProperty("file.separator")+"Sala.csv"));
+            arquivo = new FileInputStream(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
             ler = new BufferedReader(new InputStreamReader(arquivo, "UTF-8"));
 
-             linha = ler.readLine();
+            linha = ler.readLine();
             while ((linha = ler.readLine()) != null) {
-                System.out.println(linha);
                 String parte[] = linha.split(",");
                 codigo = Integer.parseInt(parte[0]);
                 logradouro = parte[1];
@@ -162,17 +157,17 @@ public class ListaDeImoveis implements ListaImoveis {
                 numeroSala = Integer.parseInt(parte[11]);
                 NumeroBanheiro = Integer.parseInt(parte[12]);
 
-                sala = new SalaComercial(logradouro, numero, bairro, cidade, 
-                        descricao, areaTotal, valor, nomeEdificio, andar, 
+                sala = new SalaComercial(logradouro, numero, bairro, cidade,
+                        descricao, areaTotal, valor, nomeEdificio, andar,
                         valorCondominio, NumeroBanheiro, numeroSala);
                 incluir(sala);
-                
 
-                
-           }    ler.close();
-                arquivo.close();
-                return true;
+            }
+            ler.close();
+            arquivo.close();
+            return true;
 
-        }return false;
+        }
+        return false;
     }
 }
