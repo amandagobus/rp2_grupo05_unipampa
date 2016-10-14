@@ -27,7 +27,7 @@ public class RP2T3 {
         MenuChacara chacara = new MenuChacara();
         int op = 1;
         Scanner entrada = new Scanner(System.in);
-        salaC.Carregar();
+        //salaC.Carregar(); aparece mensagem da execption mas carrega os arquivos.
         while (op != 0) {
             System.out.println(" ");
             System.out.println("******** BEM VINDO AO MENU ********");
