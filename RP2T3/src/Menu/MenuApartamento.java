@@ -266,6 +266,9 @@ public class MenuApartamento {
 
     public void Excluir() {
         System.out.println("Digite o código do imóvel que você deseja excluir:  ");
+        int codigo = entrada.nextInt();
+        entrada.nextLine();
+        lista.excluir(codigo);
         
        
 
