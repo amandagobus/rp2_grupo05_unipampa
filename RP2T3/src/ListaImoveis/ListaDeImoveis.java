@@ -52,10 +52,9 @@ public class ListaDeImoveis implements ListaImoveis {
     @Override
     public boolean editar(int codigo, Imovel imo) {
         boolean objeto;
-        int i = lista.indexOf(codigo);
         objeto = excluir(codigo);
         if (objeto == true) {
-            lista.add(i, imo);
+            lista.add( imo);
             return true;
         } else {
             return false;
@@ -111,7 +110,7 @@ public class ListaDeImoveis implements ListaImoveis {
     public void gravar() throws Exception {
 
         //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
-        FileWriter outFile = new FileWriter(new File("C:/Users/Arcano/Desktop/novo.CSV"));
+        FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir")+System.getProperty("file.separator")+"Sala.csv"));
         BufferedWriter escrever = new BufferedWriter(outFile);
 
         escrever.write("CODIGO,LOGRADOURO,NÚMERO,BAIRRO,CIDADE,DESCRIÇÃO,AREA TOTAL,VALOR,NOME DO EDIFICIO,ANDAR,VALOR DO CONDOMINIO,"
@@ -133,7 +132,7 @@ public class ListaDeImoveis implements ListaImoveis {
 
     public boolean ler() throws FileNotFoundException, IOException {
 
-        File file = new File("C:/Users/Arcano/Desktop/novo.CSV");
+        File file = new File(System.getProperty("user.dir")+System.getProperty("file.separator")+"Sala.csv");
 
         if (file.exists()) {
             FileInputStream arquivo;
@@ -142,7 +141,7 @@ public class ListaDeImoveis implements ListaImoveis {
             int codigo, numero, andar, numeroSala, NumeroBanheiro;
             double areaTotal, valor, valorCondominio;
             Imovel sala;
-            arquivo = new FileInputStream(new File("C:/Users/Arcano/Desktop/novo.CSV"));
+            arquivo = new FileInputStream(new File(System.getProperty("user.dir")+System.getProperty("file.separator")+"Sala.csv"));
             ler = new BufferedReader(new InputStreamReader(arquivo, "UTF-8"));
 
              linha = ler.readLine();
@@ -167,11 +166,12 @@ public class ListaDeImoveis implements ListaImoveis {
                         descricao, areaTotal, valor, nomeEdificio, andar, 
                         valorCondominio, NumeroBanheiro, numeroSala);
                 incluir(sala);
-                ler.close();
-                arquivo.close();
+                
 
+                
+           }    ler.close();
+                arquivo.close();
                 return true;
-           }
 
         }return false;
     }
