@@ -148,4 +148,18 @@ public class MenuCasa {
 
     }
 
+    /**
+     * Método que exclui um imóvel
+     */
+    public void Excluir() {
+
+    }
+
+    /**
+     * Método que edita atributos de um imóvel
+     */
+    public void Editar() {
+
+    }
+
 }
