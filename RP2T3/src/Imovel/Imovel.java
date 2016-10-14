@@ -153,7 +153,7 @@ public abstract class Imovel {
     /**
      * @param valor the valor to set
      */
-    public void setValor(int valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
     
