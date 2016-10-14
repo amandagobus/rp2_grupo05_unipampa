@@ -15,9 +15,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Scanner;
 
 /**
  *
@@ -124,39 +126,41 @@ public class ListaDeImoveis implements ListaImoveis {
     }
 
     public void ler() throws Exception {
-        FileInputStream inFile;
-        BufferedReader buff;
+        
+        
         String logradouro, bairro, cidade, descricao, nomeEdificio;
         int codigo, numero, andar, numeroSala, NumeroBanheiro;
         double areaTotal, valor, valorCondominio;
-        SalaComercial sala;
-        inFile = new FileInputStream(new File("C:/Users/Arcano/Desktop/novo.CSV"));
-        buff = new BufferedReader(new InputStreamReader(inFile, "UTF-8"));
+        Imovel sala;
+        FileReader inFile = new FileReader(new File("C:/Users/Arcano/Desktop/novo.CSV"));
+        Scanner ler = new Scanner(inFile);
 
-        String linha = null;
-        linha = buff.readLine();
-        while (linha == buff.readLine()) {
+       
+        String linha = ler.nextLine();
+        
+        while (ler.hasNext()) {
+            linha = ler.nextLine();
             String parte[] = linha.split(",");
-            codigo = Integer.parseInt(parte[1]);
-            logradouro = parte[2];
-            numero = Integer.parseInt(parte[3]);
-            bairro = parte[4];
-            cidade = parte[5];
-            descricao = parte[6];
-            areaTotal = Double.parseDouble(parte[7]);
-            valor = Double.parseDouble(parte[8]);
-            nomeEdificio = parte[9];
-            andar = Integer.parseInt(parte[10]);
-            valorCondominio = Double.parseDouble(parte[11]);
-            numeroSala = Integer.parseInt(parte[12]);
-            NumeroBanheiro = Integer.parseInt(parte[13]);
+            codigo = Integer.parseInt(parte[0]);
+            logradouro = parte[1];
+            numero = Integer.parseInt(parte[2]);
+            bairro = parte[3];
+            cidade = parte[4];
+            descricao = parte[5];
+            areaTotal = Double.parseDouble(parte[6]);
+            valor = Double.parseDouble(parte[7]);
+            nomeEdificio = parte[8];
+            andar = Integer.parseInt(parte[9]);
+            valorCondominio = Double.parseDouble(parte[10]);
+            numeroSala = Integer.parseInt(parte[11]);
+            NumeroBanheiro = Integer.parseInt(parte[12]);
+            System.out.println(codigo + logradouro+numero+bairro+cidade+descricao+areaTotal+valor+nomeEdificio+
+                    andar+ valorCondominio+ numeroSala+ NumeroBanheiro);
 
-            sala = new SalaComercial(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, nomeEdificio, andar, valorCondominio, NumeroBanheiro, numeroSala);
-
-            lista.add(sala);
-            
-            buff.close();
-            inFile.close();
+           sala = new SalaComercial(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, nomeEdificio, andar, valorCondominio, NumeroBanheiro, numeroSala);
+            incluir(sala);
+           ler.close();
+           inFile.close();
         }
 
     }
