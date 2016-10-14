@@ -145,10 +145,19 @@ public class MenuSalaComercial {
 
     }
     
+    public void Carregar(){
+    
+        try{        
+        lista.ler();       
+        }catch(Exception e){}
+        
+    
+    }
+    
     
     public void menuInicial() {
         int i;
-
+        Carregar();
         do {
             MenuSalaComercial.menu();
             i = entrada.nextInt();
