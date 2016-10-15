@@ -100,15 +100,14 @@ public class MenuChacara {
 
         System.out.println("Digite a Área Total:  ");
         areaTotal = entrada.nextDouble();
-        entrada.nextLine();
 
         System.out.println("Digite o Valor do Imóvel:  ");
         valor = entrada.nextDouble();
-        entrada.nextLine();
+        
 
         System.out.println("Digite a Área Construída:  ");
         areaConstruida = entrada.nextDouble();
-        entrada.nextLine();
+       
 
         System.out.println("Digite o Número de Quartos:  ");
         numeroQuartos = entrada.nextInt();

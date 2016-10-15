@@ -128,29 +128,7 @@ public class ListaDeImoveis implements ListaImoveis {
         outFile.close();
 
     }
-    
-    public void gravarChacara() throws Exception {
-
-        //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
-        FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Chacara.csv"));
-        BufferedWriter escrever = new BufferedWriter(outFile);
-
-        escrever.write("CODIGO,LOGRADOURO,NÚMERO,BAIRRO,CIDADE,DESCRIÇÃO,AREA TOTAL,VALOR,ÁREA CONSTRUIDA,NÚMERO DE QUARTOS,ANO DE CONSTRUÇÃO,"
-                + "DISTÂNCIA DA CIDADE\r\n");
-
-        // criar um metodo nas class abstratas Filewhite. 
-        for (Imovel imovel : lista) {
-            escrever.write(imovel.getCodigo() + "," + imovel.getLogradouro() + "," + imovel.getNumero()
-                    + "," + imovel.getBairro() + "," + imovel.getCidade() + "," + imovel.getDescricao() + "," + imovel.getAreaTotal()
-                    + "," + imovel.getValor() + "," + imovel.getAreaConstruida() + "," + imovel.getNumeroQuartos() + "," + imovel.getAnoConstrucao()
-                    + imovel.getDistCidade());
-            escrever.write("\r\n");
-
-        }
-        escrever.close();
-        outFile.close();
-
-    }
+   
 
     public boolean ler() throws FileNotFoundException, IOException {
 
@@ -196,6 +174,30 @@ public class ListaDeImoveis implements ListaImoveis {
         }
         return false;
     }
+    
+    public void gravarChacara() throws Exception {
+
+        //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
+        FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Chacara.csv"));
+        BufferedWriter escrever = new BufferedWriter(outFile);
+
+        escrever.write("CODIGO,LOGRADOURO,NÚMERO,BAIRRO,CIDADE,DESCRIÇÃO,AREA TOTAL,VALOR,ÁREA CONSTRUIDA,NÚMERO DE QUARTOS,ANO DE CONSTRUÇÃO,"
+                + "DISTÂNCIA DA CIDADE\r\n");
+
+        // criar um metodo nas class abstratas Filewhite. 
+        for (Imovel imovel : lista) {
+            escrever.write(imovel.getCodigo() + "," + imovel.getLogradouro() + "," + imovel.getNumero()
+                    + "," + imovel.getBairro() + "," + imovel.getCidade() + "," + imovel.getDescricao() + "," + imovel.getAreaTotal() + "," + imovel.getValor() 
+                    + "," + imovel.getAreaConstruida() + "," + imovel.getNumeroQuartos() + "," + imovel.getAnoConstrucao()
+                    + "," + imovel.getDistCidade());
+            escrever.write("\r\n");
+
+        }
+        escrever.close();
+        outFile.close();
+
+    }
+    
     public boolean lerChacara() throws FileNotFoundException, IOException {
 
         File file = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Chacara.csv");
@@ -204,10 +206,10 @@ public class ListaDeImoveis implements ListaImoveis {
             FileInputStream arquivo;
             BufferedReader ler;
             String linha, logradouro, bairro, cidade, descricao;
-            int codigo, numero, andar, numeroQuartos = 0, anoConstrucao = 0;
-            double areaTotal, valor, areaConstruida = 0, distCidade = 0;
+            int codigo, numero, andar, numeroQuartos, anoConstrucao;
+            double areaTotal, valor, areaConstruida, distCidade;
             Imovel chacara;
-            arquivo = new FileInputStream(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
+            arquivo = new FileInputStream(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Chacara.csv"));
             ler = new BufferedReader(new InputStreamReader(arquivo, "UTF-8"));
 
             linha = ler.readLine();
