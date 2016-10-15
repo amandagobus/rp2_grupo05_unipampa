@@ -19,6 +19,10 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,11 +31,26 @@ import java.io.InputStreamReader;
 public class ListaDeImoveis implements ListaImoveis {
 
     List<Imovel> lista = new ArrayList<>();
+    private String tipoImovel;
+
+    public String getTipoImovel() {
+        return tipoImovel;
+    }
+
+    public void setTipoImovel(String tipoImovel) {
+        this.tipoImovel = tipoImovel;
+    }
 
     @Override
     public boolean incluir(Imovel im) {
         lista.add(im);
+        try {
+            this.gravar();
+        } catch (Exception ex) {
+            Logger.getLogger(ListaDeImoveis.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return true;
+
     }
 
     @Override
@@ -106,11 +125,28 @@ public class ListaDeImoveis implements ListaImoveis {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void gravar() throws Exception {
+    private String dirName(String tipo) {
+        Properties p = System.getProperties();
+        return p.getProperty("user.home") + "\\projetoRPII\\" + tipo;
+    }
 
+    public void gravar() throws Exception {
+        String dir = null;
         //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
         FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
         BufferedWriter escrever = new BufferedWriter(outFile);
+
+        if (this.tipoImovel.equals("apartamento")) {
+            dir = dirName("apartamento");
+        } else if (this.tipoImovel.equals("casa")) {
+            dir = dirName("chacara");
+        } else if (this.tipoImovel.equals("chacara")) {
+            dir = dirName("chacara");
+        } else if (this.tipoImovel.equals("salaComercial")) {
+            dir = dirName("sala_comercial");
+        } else if (this.tipoImovel.equals("terreno")) {
+            dir = dirName("terreno");
+        }
 
         escrever.write("CODIGO,LOGRADOURO,NÚMERO,BAIRRO,CIDADE,DESCRIÇÃO,AREA TOTAL,VALOR,NOME DO EDIFICIO,ANDAR,VALOR DO CONDOMINIO,"
                 + "NÚMERO DE SALAS,NÚMERO DE BANHEIROS\r\n");
@@ -128,7 +164,7 @@ public class ListaDeImoveis implements ListaImoveis {
         outFile.close();
 
     }
-    
+
     public void gravarChacara() throws Exception {
 
         //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
@@ -196,6 +232,7 @@ public class ListaDeImoveis implements ListaImoveis {
         }
         return false;
     }
+
     public boolean lerChacara() throws FileNotFoundException, IOException {
 
         File file = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Chacara.csv");
@@ -226,11 +263,9 @@ public class ListaDeImoveis implements ListaImoveis {
                 anoConstrucao = Integer.parseInt(parte[10]);
                 distCidade = Double.parseDouble(parte[11]);
 
-                
-                
-            chacara = new Chacara(distCidade, logradouro, numero, bairro, cidade, 
-            descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstrucao);
-                
+                chacara = new Chacara(distCidade, logradouro, numero, bairro, cidade,
+                        descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstrucao);
+
                 incluir(chacara);
 
             }
@@ -241,4 +276,5 @@ public class ListaDeImoveis implements ListaImoveis {
         }
         return false;
     }
+
 }

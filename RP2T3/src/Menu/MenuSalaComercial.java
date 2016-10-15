@@ -317,6 +317,7 @@ public class MenuSalaComercial {
     }
 
     public void menuInicial() {
+        lista.setTipoImovel("SalaComercial");
         int i;
        
         do {

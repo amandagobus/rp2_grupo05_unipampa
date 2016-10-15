@@ -27,6 +27,7 @@ public class MenuCasa {
      * Método chamado menu, que exibe as opções Novo Imóvel e Consultar
      */
     public void menuInicial() {
+        lista.setTipoImovel("casa");
         int opcao = -1;
         do {
             System.out.println(" \n");

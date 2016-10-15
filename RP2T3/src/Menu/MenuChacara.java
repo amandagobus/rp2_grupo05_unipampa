@@ -162,6 +162,7 @@ public class MenuChacara {
     }
     
     public void menuInicial() {
+        lista.setTipoImovel("chacara");
         int i;
        
         do {

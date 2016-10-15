@@ -125,6 +125,7 @@ public class MenuTerreno {
     }
     
     public void menuInicial() {
+        lista.setTipoImovel("terreno");
         int i;
 
         do {

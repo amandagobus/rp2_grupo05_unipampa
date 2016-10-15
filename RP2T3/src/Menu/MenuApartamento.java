@@ -11,6 +11,13 @@ import static Imovel.EntradasTeclado.inInt;
 import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,6 +33,7 @@ public class MenuApartamento {
      * Método chamado menu, que exibe as opções Novo Imóvel e Consultar
      */
     public void menuInicial() {
+        lista.setTipoImovel("apartamento");
         int opcao = -1;
         do {
             System.out.println(" \n");
@@ -83,7 +91,6 @@ public class MenuApartamento {
         System.out.print("Digite o Logradouro:  ");
         logradouro = entrada.nextLine();
 
-       
         numero = inInt("Digite o numero: ");
         entrada.nextLine();
 
@@ -96,36 +103,30 @@ public class MenuApartamento {
         System.out.print("Digite Uma Descrição:  ");
         descricao = entrada.nextLine();
 
-       
         areaTotal = inDouble("Digite a Área Total:  ");
         entrada.nextLine();
 
-        
         valor = inDouble("Digite o Valor do Imóvel:  ");
         entrada.nextLine();
 
         System.out.print("Digite o Nome do Edifício:  ");
         nomeEdificio = entrada.nextLine();
 
-       
         numeroQuartos = inInt("Digite o Número de Quartos:  ");
         entrada.nextLine();
 
         numeroVagas = inInt("Digite o Número de Vagas na garagem:  ");
         entrada.nextLine();
 
-        
         anoDeConstrucao = inInt("Digite o Ano de Construção:  ");
         entrada.nextLine();
 
-        numeroDoApartamento =inInt("Digite o Número do Apartamento:  ");
+        numeroDoApartamento = inInt("Digite o Número do Apartamento:  ");
         entrada.nextLine();
 
-        
         andar = inInt("Digite o Número do Andar:  ");
         entrada.nextLine();
 
-        
         valorCondominio = inDouble("Digite o Valor do Condominio:  ");
         entrada.nextLine();
         System.out.println("=======================================");
@@ -136,9 +137,11 @@ public class MenuApartamento {
                 numeroVagas, numeroQuartos);
 
         boolean objeto = lista.incluir(apartamento);
+
         System.out.println("\n\n");
         if (objeto == true) {
             System.out.println("Imóvel incluido com sucesso.");
+
         } else {
             System.out.println("Imóvel não foi incluido.");
         }
@@ -269,8 +272,6 @@ public class MenuApartamento {
         int codigo = entrada.nextInt();
         entrada.nextLine();
         lista.excluir(codigo);
-        
-       
 
     }
 }
