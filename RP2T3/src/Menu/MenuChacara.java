@@ -8,6 +8,7 @@ package Menu;
 import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import Chacara.Chacara;
+import SalaComercial.SalaComercial;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -28,7 +29,7 @@ public class MenuChacara {
     public static void menu() {
         System.out.println(" \n");
         System.out.println("***** MENU *****\n");
-        System.out.println("1) NOVO IMÓVEL CHACARA");
+        System.out.println("1) NOVO IMÓVEL CHACARA ");
         System.out.println("2) CONSULTAR");
         System.out.println("3) EDITAR ");
         //System.out.println("4) Excluir");
@@ -146,18 +147,16 @@ public class MenuChacara {
      * Consulta pela entrada do usuário (inteiro - código)
      */
     public void Consultar() {
+        System.out.println("\n");
         System.out.println("Digite o Código Que Deseja Consultar: ");
-        Imovel Imo = lista.consultar(entrada.nextInt()); //Cria um objeto do tipo Imóvel e consulta pela entrada do usuário
+        Imovel Imo = lista.consultar(entrada.nextInt());
         entrada.nextLine();
 
         if ((Imo != null) && (Imo instanceof Chacara)) {
-            System.out.println("--------------------------------------------");
-            System.out.println(">>> Informações do Imóvel <<<\n");
             System.out.println(Imo.toString());
-            System.out.println("--------------------------------------------");
 
-        } else {
-            System.out.println("Imóvel Não Cadastrado.");
+        } else if (Imo == null) {
+            System.out.println("Imóvel Não Cadastrado;");
         }
 
     }
