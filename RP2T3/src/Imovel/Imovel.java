@@ -254,5 +254,18 @@ public abstract class Imovel {
 
         return dados;
     }
+      
+    public String toFileTitulo(){
+    String dados="";
+    dados+="CODIGO,LOGRADOURO,NÚMERO,BAIRRO,CIDADE,DESCRIÇÂO,AREA TOTAL,VALOR,";
+    
+    return dados;
+    
+    }
+    public String toFile(){
+    String dados = "";
+    dados += codigo+ ","+ logradouro+ ","+numero+ ","+bairro+ ","+cidade+ ","+descricao+ ","+areaTotal+ ","+valor+",";
+    return dados;
+    }
 
 }

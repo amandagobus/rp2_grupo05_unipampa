@@ -26,7 +26,7 @@ public abstract class Residencia extends Imovel {
      * @param valor
      * @param areaConstruida
      * @param numeroQuartos
-     * @param anoConstucao
+     * @param anoConstrucao
      */
     public Residencia(String logradouro, int numero, String bairro,
             String cidade, String descricao, double areaTotal, double valor,
@@ -43,13 +43,15 @@ public abstract class Residencia extends Imovel {
      *
      * @return areaCosntruida, int.
      */
-    public double getAreaCosntruida() {
+    @Override
+    public double getAreaConstruida() {
         return areaConstruida;
     }
 
     /**
      * @param areaConstruida the areaConstruida to set
      */
+    @Override
     public void setAreaConstruida(double areaConstruida) {
         this.areaConstruida = areaConstruida;
     }
@@ -57,6 +59,7 @@ public abstract class Residencia extends Imovel {
     /**
      * @return the numeroQuartos
      */
+    @Override
     public int getNumeroQuartos() {
         return numeroQuartos;
     }
@@ -64,6 +67,7 @@ public abstract class Residencia extends Imovel {
     /**
      * @param numeroQuartos the numeroQuartos to set
      */
+    @Override
     public void setNumeroQuartos(int numeroQuartos) {
         this.numeroQuartos = numeroQuartos;
     }
@@ -71,6 +75,7 @@ public abstract class Residencia extends Imovel {
     /**
      * @return the anoConstrucao
      */
+    @Override
     public int getAnoConstrucao() {
         return anoConstrucao;
     }
@@ -78,6 +83,7 @@ public abstract class Residencia extends Imovel {
     /**
      * @param anoConstrucao the anoConstrucao to set
      */
+    @Override
     public void setAnoConstrucao(int anoConstrucao) {
         this.anoConstrucao = anoConstrucao;
     }

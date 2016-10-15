@@ -81,10 +81,30 @@ public class SalaComercial extends Predio {
     @Override
     public String toString() {
         String dados = super.toString();
-        dados += "Número De Banheiros: " + numeroDeBanheiros + "\n";
         dados += "Número Da Sala: " + numeroDaSala + "\n";
+        dados += "Número De Banheiros: " + numeroDeBanheiros + "\n";
+        
 
         return dados;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toFileTitulo(){
+    String dados= super.toFileTitulo();
+    dados += "NÚMERO DA SALA, NÚMERO DE BNAHEIRO";
+    
+    return dados;
+    }
+    
+    @Override
+    public String toFile(){
+    String dados = super.toFile();
+    dados +=numeroDaSala+","+numeroDeBanheiros;
+    return dados;
     }
 
 }
