@@ -8,7 +8,6 @@ package Menu;
 import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import Chacara.Chacara;
-import SalaComercial.SalaComercial;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -121,6 +120,7 @@ public class MenuChacara {
 
         System.out.println("Digite a Distância da Cidade:  ");
         distCidade = entrada.nextDouble();
+        entrada.nextLine();
 
         Imovel chacara = new Chacara(distCidade, logradouro, numero, bairro, cidade, 
             descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstrucao);
@@ -137,7 +137,7 @@ public class MenuChacara {
         try {
             lista.gravarChacara();
         } catch (Exception ex) {
-            Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuChacara.class.getName()).log(Level.SEVERE, null, ex);
         }
                 
 
@@ -165,7 +165,7 @@ public class MenuChacara {
         int i;
        
         do {
-            MenuSalaComercial.menu();
+            MenuChacara.menu();
             i = entrada.nextInt();
             entrada.nextLine();
 
@@ -178,7 +178,7 @@ public class MenuChacara {
                     break;
 
                 case 2:
-                    MenuSalaComercial.menu2();
+                    MenuChacara.menu2();
                     int opcao = entrada.nextInt();
                     entrada.nextLine();
 

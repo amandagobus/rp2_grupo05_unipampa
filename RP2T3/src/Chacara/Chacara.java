@@ -22,10 +22,12 @@ public class Chacara extends Residencia {
         this.distCidade = distCidade;
     }
   
+    @Override
     public double getDistCidade() {
         return distCidade;
     }
 
+    @Override
     public void setDistCidade(double distCidade) {
         this.distCidade = distCidade;
     }
