@@ -6,12 +6,12 @@
 package Menu;
 
 import Imovel.Imovel;
+import static Imovel.EntradasTeclado.inInt;
+import static Imovel.EntradasTeclado.inDouble;
+import static Imovel.EntradasTeclado.inString;
 import ListaImoveis.ListaDeImoveis;
 import SalaComercial.SalaComercial;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +31,7 @@ public class MenuSalaComercial {
         System.out.println("1) NOVO IMÓVEL SALA COMERCIAL");
         System.out.println("2) CONSULTAR");
         System.out.println("3) EDITAR ");
-        //System.out.println("4) Excluir");
+        System.out.println("4) EXCLUIR");
         System.out.println("0) VOLTAR ");
         System.out.println(" ");
         System.out.print("OPÇÃO:    ");
@@ -68,47 +68,20 @@ public class MenuSalaComercial {
         int numeroDeBanheiros;
         int numeroDaSala;
 
-        System.out.print("Digite o Logradouro:  ");
-        logradouro = entrada.nextLine();
-
-        System.out.print("Digite o Número:  ");
-        numero = entrada.nextInt();
-        entrada.nextLine();
-
-        System.out.print("Digite o Bairro:  ");
-        bairro = entrada.nextLine();
-
-        System.out.print("Digite a Cidade:  ");
-        cidade = entrada.nextLine();
-
-        System.out.print("Digite Uma Descrição:  ");
-        descricao = entrada.nextLine();
-
-        System.out.print("Digite a Área Total:  ");
-        areaTotal = entrada.nextDouble();
-        entrada.nextLine();
-
-        System.out.print("Digite o Valor do Imóvel:  ");
-        valor = entrada.nextDouble();
-        entrada.nextLine();
-        System.out.print("Digite o Nome do Edifício:  ");
-        nomeEdifico = entrada.nextLine();
-
-        System.out.print("Digite o Número do Andar:  ");
-        andar = entrada.nextInt();
-
-        System.out.print("Digite o Valor do Condominio:  ");
-        valorCondominio = entrada.nextDouble();
-        entrada.nextLine();
-
-        System.out.print("Digite o Número da Sala:  ");
-        numeroDaSala = entrada.nextInt();
-        entrada.nextLine();
-
-        System.out.print("Digite o Número de Banheiros:  ");
-        numeroDeBanheiros = entrada.nextInt();
-        entrada.nextLine();
-
+        logradouro = inString("Digite o Logradouro:  ");
+        numero = inInt("Digite o Número:  ");
+        bairro = inString("Digite o Bairro:  ");
+        cidade = inString("Digite a Cidade:  ");
+        descricao = inString("Digite Uma Descrição:  ");
+        areaTotal = inDouble("Digite a Área Total:  ");
+        valor = inDouble("Digite o Valor do Imóvel:  ");
+        nomeEdifico = inString("Digite o Nome do Edifício:  ");
+        andar = inInt("Digite o Número do Andar:  ");
+        valorCondominio = inDouble("Digite o Valor do Condominio:  ");
+        numeroDaSala = inInt("Digite o Número da Sala:  ");
+        numeroDeBanheiros = inInt("Digite o Número de Banheiros:  ");
+        
+        
         Imovel salaC = new SalaComercial(logradouro, numero, bairro, cidade,
                 descricao, areaTotal, valor, nomeEdifico, andar, valorCondominio,
                 numeroDeBanheiros, numeroDaSala);
@@ -122,7 +95,7 @@ public class MenuSalaComercial {
             System.out.println("Imóvel não foi incluido.");
         }
         try {
-            lista.gravar();
+            lista.escreverArquivo();
         } catch (Exception ex) {
             Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -148,20 +121,31 @@ public class MenuSalaComercial {
     }
 
     public void Carregar() {
-     
-        
+
         try {
             lista.ler();
         } catch (IOException ex) {
             Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
+    }
+
+    public void excluirControle() {
+        System.out.println(" DIGITE O CODIGO DO IMÓVEL: ");
+        boolean objeto = lista.excluir(entrada.nextInt());
+        if (objeto == true) {
+
+            System.out.println("IMÓVEL EXCUIDO");
+            lista.escreverArquivo();
+        } else {
+
+            System.out.println("IMÓVEL NÂO ENCONTRADO");
+        }
 
     }
 
     public void editarControle() {
-        
+
         System.out.println("\n");
         System.out.println("***********  MENU EDITAR ************ ");
         System.out.println("\n ");
@@ -170,13 +154,16 @@ public class MenuSalaComercial {
         entrada.nextLine();
         Imovel editarLista = lista.consultar(codigoConsulta);
         entrada.nextLine();
-
         
+        int i;
+        double d;
+        String st;
+
         int k = 1;
 
         if (editarLista != null) {
-            
-            while (k != 0){
+
+            while (k != 0) {
                 System.out.println(" \n");
                 System.out.println("QUAL INFORMAÇÂO DESEJA EDITAR:");
                 System.out.println(" \n");
@@ -201,124 +188,119 @@ public class MenuSalaComercial {
                 switch (k) {
                     case 1:
                         System.out.print("\n ");
-                        System.out.print("DIGITE O NOVO LOGRADOURO: ");
-                        editarLista.setLogradouro(entrada.nextLine());
+                        st = inString("DIGITE O NOVO LOGRADOURO: ");
+                        editarLista.setLogradouro(st);
                         break;
                     case 2:
 
                         System.out.print("\n\n");
-                        System.out.print("DIGITE O NÚEMRO:");
-                        editarLista.setNumero(entrada.nextInt());
-                        entrada.nextLine();
+                        i = inInt("DIGITE O NÚEMRO:  ");
+                        editarLista.setNumero(i);
+                        
 
                         break;
 
                     case 3:
 
                         System.out.print("\n");
-                        System.out.print("DIGITE O BAIRRO:");
-                        editarLista.setBairro(entrada.nextLine());
+                        st = inString("DIGITE O BAIRRO:  ");
+                        editarLista.setBairro(st);
 
                         break;
 
                     case 4:
 
                         System.out.print("\n");
-                        System.out.print("DIGITE A CIDADE:");
-                        editarLista.setCidade(entrada.nextLine());
+                        st = inString("DIGITE A CIDADE:  ");
+                        editarLista.setCidade(st);
 
                         break;
 
                     case 5:
 
                         System.out.print("\n");
-                        System.out.print("DIGITE A DESCRIÇÂO:");
-                        editarLista.setCidade(entrada.nextLine());
+                        st = inString("DIGITE A DESCRIÇÂO: ");
+                        editarLista.setCidade(st);
 
                         break;
 
                     case 6:
 
                         System.out.print("\n");
-                        System.out.print("DIGITE A ARÉA TOTAL:");
-                        editarLista.setAreaTotal(entrada.nextDouble());
+                        d = inDouble("DIGITE A ARÉA TOTAL:  ");
+                        editarLista.setAreaTotal(d);
                         entrada.nextLine();
 
                         break;
-                     
-                    case 7: 
+
+                    case 7:
                         System.out.print("\n");
-                        System.out.print("DIGITE O VALOR:");
-                        editarLista.setValor(entrada.nextDouble());
-                        
+                        d = inDouble("DIGITE O VALOR:  ");
+                        editarLista.setValor(d);
+
                         break;
-                        
-                    case 8: 
+
+                    case 8:
                         System.out.print("\n");
-                        System.out.print("DIGITE O NOME DO EDIFICIO:");
-                        editarLista.setNomeEdificio(entrada.nextLine());
-                        
+                        st = inString("DIGITE O NOME DO EDIFICIO:  ");
+                        editarLista.setNomeEdificio(st);
+
                         break;
-                        
+
                     case 9:
-                        
+
                         System.out.print("\n");
-                        System.out.print("DIGITE O ANDAR:");
-                        editarLista.setAndar(entrada.nextInt());
-                        entrada.nextLine();
+                        i = inInt("DIGITE O ANDAR:  ");
+                        editarLista.setAndar(i);
+                        
                         break;
-                        
-                        
+
                     case 10:
-                        
+
                         System.out.print("\n");
-                        System.out.print("DIGITE O VALOR DO CONDOMINIO:");
-                        editarLista.setValor(entrada.nextDouble());
-                        entrada.nextLine();
+                        d = inDouble("DIGITE O VALOR DO CONDOMINIO:  ");
+                        editarLista.setValor(d);
+                        
                         break;
-                        
-                        
+
                     case 11:
-                        
+
                         System.out.print("\n");
-                        System.out.print("DIGITE O NÚMERO DA SALA:");
-                        editarLista.setNumeroDaSala(entrada.nextInt());
-                        entrada.nextLine();
+                        i = inInt("DIGITE O NÚMERO DA SALA:  ");
+                        editarLista.setNumeroDaSala(i);
                         
+
                         break;
-                        
-                        
+
                     case 12:
-                        
+
                         System.out.print("\n");
-                        System.out.print("DIGITE O NÚMERO DE BANHEIRO:");
-                        editarLista.setNumeroDeBanheiros(entrada.nextInt());
-                        entrada.nextLine();
+                        i = inInt("DIGITE O NÚMERO DE BANHEIRO:  ");
+                        editarLista.setNumeroDeBanheiros(i);
                         
+
                         break;
-                    
-                    
+
                 }
 
             }
-            
+
             lista.editar(codigoConsulta, editarLista);
-            System.out.println(" aki");
             try {
-                lista.gravar();
+                lista.escreverArquivo();
             } catch (Exception ex) {
                 Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } else {
-            System.out.println(" \nImóvel Não Encotrado ");
+            System.out.println("\n IMÓVEL NÂO ENCONTRADO ");
         }
 
     }
 
     public void menuInicial() {
         int i;
-       
+
         do {
             MenuSalaComercial.menu();
             i = entrada.nextInt();
@@ -327,7 +309,7 @@ public class MenuSalaComercial {
             switch (i) {
                 case 1:
                     System.out.println("\n");
-                    System.out.println("*********** Incluir Imóvel ************");
+                    System.out.println("*********** INCUIR IMÓVEL ************");
                     System.out.println("\n");
                     IncluirImovel();
                     break;
@@ -340,7 +322,7 @@ public class MenuSalaComercial {
                     switch (opcao) {
                         case 1:
                             System.out.println("\n");
-                            System.out.println("******** Consultar Imóvel Por Codigo ********");
+                            System.out.println("******** CONSULTAR IMÓVEL POR CÓDIGO ********");
                             System.out.println("\n\n");
                             Consultar();
                             break;
@@ -352,12 +334,14 @@ public class MenuSalaComercial {
                     break;
 
                 case 3:
-                    System.out.println("\n");
                     editarControle();
                     break;
 
                 case 4:
-
+                    System.out.println("\n");
+                    System.out.println("******** EXCLUIR IMÓVEL ********");
+                    System.out.println("\n");
+                    excluirControle();
                     break;
 
                 case 5:
