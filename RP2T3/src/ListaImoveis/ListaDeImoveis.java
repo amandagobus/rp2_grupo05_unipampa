@@ -11,6 +11,7 @@ import SalaComercial.SalaComercial;
 import java.util.ArrayList;
 import java.util.List;
 import Imovel.ListaImoveis;
+import Menu.MenuSalaComercial;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,6 +20,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -96,17 +99,83 @@ public class ListaDeImoveis implements ListaImoveis {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public boolean escreverArquivo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     @Override
     public boolean lerArquivo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void gravar() throws Exception {
+    
+    @Override
+    public boolean escreverArquivo(){
+
+   try{        
+        FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
+        BufferedWriter escrever = new BufferedWriter(outFile);
+        Imovel mo = lista.get(0);
+        escrever.write(mo.toFileTitulo());
+        escrever.write("\r\n");
+
+        
+        for (Imovel imovel : lista) {
+            escrever.write(imovel.toFile());
+            escrever.write("\r\n");
+        } 
+        escrever.close();
+        outFile.close();
+        return true;
+   }catch(IOException ex){
+  Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
+   
+   } return false;
+    }
+
+    public boolean ler() throws FileNotFoundException, IOException {
+
+        File file = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv");
+
+        if (file.exists()) {
+            FileInputStream arquivo;
+            BufferedReader ler;
+            String linha, logradouro, bairro, cidade, descricao, nomeEdificio;
+            int codigo, numero, andar, numeroSala, NumeroBanheiro;
+            double areaTotal, valor, valorCondominio;
+            Imovel sala;
+            arquivo = new FileInputStream(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
+            ler = new BufferedReader(new InputStreamReader(arquivo, "UTF-8"));
+
+            linha = ler.readLine();
+            while ((linha = ler.readLine()) != null) {
+                String parte[] = linha.split(",");
+                codigo = Integer.parseInt(parte[0]);
+                logradouro = parte[1];
+                numero = Integer.parseInt(parte[2]);
+                bairro = parte[3];
+                cidade = parte[4];
+                descricao = parte[5];
+                areaTotal = Double.parseDouble(parte[6]);
+                valor = Double.parseDouble(parte[7]);
+                nomeEdificio = parte[8];
+                andar = Integer.parseInt(parte[9]);
+                valorCondominio = Double.parseDouble(parte[10]);
+                numeroSala = Integer.parseInt(parte[11]);
+                NumeroBanheiro = Integer.parseInt(parte[12]);
+
+                sala = new SalaComercial(logradouro, numero, bairro, cidade,
+                        descricao, areaTotal, valor, nomeEdificio, andar,
+                        valorCondominio, NumeroBanheiro, numeroSala);
+                incluir(sala);
+
+            }
+            ler.close();
+            arquivo.close();
+            return true;
+
+        }
+        return false;
+    }
+
+    /*public void gravar() throws Exception {
 
         //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
         FileWriter outFile = new FileWriter(new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "Sala.csv"));
@@ -174,7 +243,7 @@ public class ListaDeImoveis implements ListaImoveis {
         }
         return false;
     }
-    
+    */
     public void gravarChacara() throws Exception {
 
         //verificar se o arquivo existe, se não existeir criar (o ato de recriar o mesmo arquivo ja resolve por se só?)
