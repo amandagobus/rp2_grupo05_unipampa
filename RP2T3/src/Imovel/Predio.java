@@ -102,5 +102,27 @@ public abstract class Predio extends Imovel {
 
         return dados;
     }
-
+  
+    
+    
+    @Override
+    public String toFileTitulo(){
+    String dados = super.toFileTitulo();
+    dados +="NOME DO EDIFICIO, ANDAR, VALOR DO CONDOMINIO,";
+    return dados;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toFile(){
+    String dados = super.toFile();
+    dados+= nomeEdificio+ ","+andar+ ","+valorCondominio+",";
+    
+    return dados; 
+    
+    }
+    
 }
