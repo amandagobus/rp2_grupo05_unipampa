@@ -204,6 +204,34 @@ public abstract class Imovel {
     public void setValorCondominio(double i){
     }
     
+    public double getAreaConstruida() {
+        return i;
+    }
+
+    public void setAreaConstruida(double i) {
+    }
+
+    public int getNumeroQuartos() {
+        return k;
+    }
+
+    public void setNumeroQuartos(int k) {
+    }
+
+    public int getAnoConstrucao() {
+        return k;
+    }
+
+    public void setAnoConstrucao(int k) {
+    }
+    
+    public double getDistCidade(){
+        return i;
+    }
+    
+    public void setDistCidade(double i){
+    }
+    
 
     /**
      * Diz como o Objeto imoveis deve se escrever como uma String.
