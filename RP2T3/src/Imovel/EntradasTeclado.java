@@ -26,7 +26,7 @@ public abstract class EntradasTeclado {
             input.nextLine();
         } catch (Exception e) {
             System.out.println("Ocorreu algum erro, tente novamente");
-            System.out.println("");
+            System.out.print("");
             input.nextLine();
             return inInt(mensagem);
         }
@@ -47,8 +47,8 @@ public abstract class EntradasTeclado {
             in = input.nextDouble();
             input.nextLine();
         } catch (Exception e) {
-            System.out.println("Ocorreu algum erro, tente novamente");
-            System.out.println("");
+            System.out.print("Ocorreu algum erro, tente novamente");
+            System.out.print("");
             input.nextLine();
             return inDouble(mensagem);
         }

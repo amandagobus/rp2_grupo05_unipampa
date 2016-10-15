@@ -106,8 +106,8 @@ public class MenuChacara {
         System.out.println("Digite a Distância da Cidade:  ");
         distCidade = entrada.nextDouble();
 
-        Imovel chacara = new Chacara(distCidade, logradouro, numero, bairro, cidade, descricao, areaTotal, valor,
-                areaConstruida, numeroQuartos, anoConstucao);
+     //   Imovel chacara = new Chacara(distCidade, logradouro, numero, bairro, cidade, descricao, areaTotal, valor,
+       //         areaConstruida, numeroQuartos, anoConstucao);
 
         boolean objeto = lista.incluir(chacara);
         System.out.println("\n");
