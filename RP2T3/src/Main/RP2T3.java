@@ -6,6 +6,7 @@
  */
 package Main;
 
+import static Imovel.EntradasTeclado.inInt;
 import Menu.MenuApartamento;
 import Menu.MenuCasa;
 import Menu.MenuChacara;
@@ -35,8 +36,8 @@ public class RP2T3 {
             System.out.println("1) APARTAMENTO \n2) CASA \n3) CHACARA\n"
                     + "4) SALA COMERCIAL \n5) TERRENO \n0) SAIR");
             System.out.println(" ");
-            System.out.print("Opção: ");
-            op = entrada.nextInt();
+            
+            op =inInt("Opção: ");
             entrada.hasNextLine();
 
             switch (op) {

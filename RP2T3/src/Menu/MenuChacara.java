@@ -357,7 +357,7 @@ public class MenuChacara {
             try {
                 lista.gravarChacara();
             } catch (Exception ex) {
-                Logger.getLogger(MenuSalaComercial.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Chacara.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } else {

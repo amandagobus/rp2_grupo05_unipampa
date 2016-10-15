@@ -9,6 +9,8 @@ import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import java.util.Scanner;
 import Casa.Casa;
+import static Imovel.EntradasTeclado.inDouble;
+import static Imovel.EntradasTeclado.inInt;
 import Imovel.Tipo;
 
 /**
@@ -80,8 +82,8 @@ public class MenuCasa {
         System.out.print("Digite o Logradouro:  ");
         logradouro = entrada.nextLine();
 
-        System.out.print("Digite o Número:  ");
-        numero = entrada.nextInt();
+        
+        numero = inInt("Digite o Número:  ");
         entrada.nextLine();
 
         System.out.print("Digite o Bairro:  ");
@@ -93,28 +95,26 @@ public class MenuCasa {
         System.out.print("Digite Uma Descrição:  ");
         descricao = entrada.nextLine();
 
-        System.out.print("Digite a Área Total:  ");
-        areaTotal = entrada.nextDouble();
+       
+        areaTotal = inDouble("Digite a Área Total:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Valor do Imóvel:  ");
-        valor = entrada.nextDouble();
+        valor = inDouble("Digite o Valor do Imóvel:  ");
         entrada.nextLine();
 
-        System.out.print("Digite a Área Construída:  ");
-        areaConstruida = entrada.nextDouble();
+       
+        areaConstruida = inDouble("Digite a Área Construída:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Número de Quartos:  ");
-        numeroQuartos = entrada.nextInt();
+       
+        numeroQuartos = inInt("Digite o Número de Quartos:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Número de Vagas na garagem:  ");
-        numeroDeVagas = entrada.nextInt();
+        numeroDeVagas =inInt("Digite o Número de Vagas na garagem:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Ano de Construção:  ");
-        anoConstrucao = entrada.nextInt();
+      
+        anoConstrucao =inInt("Digite o Ano de Construção:  ");
         entrada.nextLine();
 
         System.out.println("Digite o Tipo do Imóvel: ");

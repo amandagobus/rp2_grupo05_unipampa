@@ -19,14 +19,14 @@ public abstract class EntradasTeclado {
      * @return Retorna o int inserido pelo usuÃ¡rio
      */
     public static int inInt(String mensagem) {
-        System.out.println(mensagem);
+        System.out.print(mensagem);
         int in = 1;
         try {
             in = input.nextInt();
             input.nextLine();
         } catch (Exception e) {
             System.out.println("Ocorreu algum erro, tente novamente");
-            System.out.println("");
+            System.out.print("");
             input.nextLine();
             return inInt(mensagem);
         }
@@ -41,14 +41,14 @@ public abstract class EntradasTeclado {
      * @return Retorna o double inserido pelo usuÃ¡rio
      */
     public static double inDouble(String mensagem) {
-        System.out.println(mensagem);
+        System.out.print(mensagem);
         double in;
         try {
             in = input.nextDouble();
             input.nextLine();
         } catch (Exception e) {
-            System.out.println("Ocorreu algum erro, tente novamente");
-            System.out.println("");
+            System.out.print("Ocorreu algum erro, tente novamente");
+            System.out.print("");
             input.nextLine();
             return inDouble(mensagem);
         }
@@ -64,7 +64,7 @@ public abstract class EntradasTeclado {
      */
     public static String inString(String mensagem) {
         String in;
-        System.out.println(mensagem);
+        System.out.print(mensagem);
         in = input.nextLine();
         return in;
     }
