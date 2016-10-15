@@ -15,11 +15,12 @@ public class Chacara extends Residencia {
 
     protected double distCidade;
 
-    public Chacara(double distCidade, String logradouro, int numero, String bairro, String cidade, String descricao, double areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao) {
+    public Chacara(String logradouro, int numero, String bairro, String cidade, String descricao, 
+            double areaTotal, double valor, double areaConstruida, int numeroQuartos, int anoConstucao, double distCidade) {
+        
         super(logradouro, numero, bairro, cidade, descricao, areaTotal, valor, areaConstruida, numeroQuartos, anoConstucao);
         this.distCidade = distCidade;
     }
-
   
     public double getDistCidade() {
         return distCidade;
