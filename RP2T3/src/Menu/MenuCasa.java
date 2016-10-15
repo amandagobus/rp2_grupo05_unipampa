@@ -32,7 +32,7 @@ public class MenuCasa {
             System.out.println("1) Novo Imóvel CASA ");
             System.out.println("2) Consultar");
             System.out.println("3) Editar ");
-            //System.out.println("4) Excluir");
+            System.out.println("4) Excluir");
             System.out.println("0) Sair ");
             System.out.println(" ");
             System.out.print("Opção: ");
@@ -51,7 +51,7 @@ public class MenuCasa {
                     Editar();
                     break;
                 case 4:
-                    //Excluir();
+                    Excluir();
                     break;
             }
         } while (opcao != 0);

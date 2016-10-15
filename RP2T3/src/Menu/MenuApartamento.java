@@ -6,6 +6,8 @@
 package Menu;
 
 import Apartamento.Apartamento;
+import static Imovel.EntradasTeclado.inDouble;
+import static Imovel.EntradasTeclado.inInt;
 import Imovel.Imovel;
 import ListaImoveis.ListaDeImoveis;
 import java.util.Scanner;
@@ -81,8 +83,8 @@ public class MenuApartamento {
         System.out.print("Digite o Logradouro:  ");
         logradouro = entrada.nextLine();
 
-        System.out.print("Digite o Número:  ");
-        numero = entrada.nextInt();
+       
+        numero = inInt("Digite o numero: ");
         entrada.nextLine();
 
         System.out.print("Digite o Bairro:  ");
@@ -94,39 +96,37 @@ public class MenuApartamento {
         System.out.print("Digite Uma Descrição:  ");
         descricao = entrada.nextLine();
 
-        System.out.print("Digite a Área Total:  ");
-        areaTotal = entrada.nextDouble();
+       
+        areaTotal = inDouble("Digite a Área Total:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Valor do Imóvel:  ");
-        valor = entrada.nextDouble();
+        
+        valor = inDouble("Digite o Valor do Imóvel:  ");
         entrada.nextLine();
 
         System.out.print("Digite o Nome do Edifício:  ");
         nomeEdificio = entrada.nextLine();
 
-        System.out.print("Digite o Número de Quartos:  ");
-        numeroQuartos = entrada.nextInt();
+       
+        numeroQuartos = inInt("Digite o Número de Quartos:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Número de Vagas na garagem:  ");
-        numeroVagas = entrada.nextInt();
+        numeroVagas = inInt("Digite o Número de Vagas na garagem:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Ano de Construção:  ");
-        anoDeConstrucao = entrada.nextInt();
+        
+        anoDeConstrucao = inInt("Digite o Ano de Construção:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Número do Apartamento:  ");
-        numeroDoApartamento = entrada.nextInt();
+        numeroDoApartamento =inInt("Digite o Número do Apartamento:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Número do Andar:  ");
-        andar = entrada.nextInt();
+        
+        andar = inInt("Digite o Número do Andar:  ");
         entrada.nextLine();
 
-        System.out.print("Digite o Valor do Condominio:  ");
-        valorCondominio = entrada.nextDouble();
+        
+        valorCondominio = inDouble("Digite o Valor do Condominio:  ");
         entrada.nextLine();
         System.out.println("=======================================");
 
